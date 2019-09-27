@@ -1,0 +1,425 @@
+// BEGIN GENERAL //
+
+.form-group {
+  &.focus:not(.readonly) {
+    .k-dropdown,
+    .k-combobox,
+    .k-datepicker,
+    .k-timepicker {
+      .k-select .k-icon:before {
+        color: $color-blue-n0;
+      }
+    }
+  }
+
+  &.form-group-sm {
+    .k-dropdown,
+    .k-combobox,
+    .k-datepicker,
+    .k-timepicker,
+    .k-numerictextbox {
+      .k-input {
+        padding-top: .4rem;
+        padding-bottom: .4rem;
+        padding-left: 1.2rem; 
+      }
+
+      .k-select {
+        min-height: 2.8rem;
+      }
+    }
+  }
+}
+
+.form-control-label {
+  ~ .k-dropdown,
+  ~ .k-combobox,
+  ~ .k-datepicker,
+  ~ .k-timepicker,
+  ~ .k-numerictextbox {
+    .k-input {
+      padding-top: 2rem;
+      padding-bottom: .4rem;
+    }
+  }
+
+  ~ .k-multiselect {
+    .k-multiselect-wrap {
+      padding: 1.8rem 1.6rem .2rem;
+    }
+
+    .k-input {
+      margin: 0 .2rem;
+      padding-top: .4rem;
+      padding-bottom: .4rem;
+    }
+  }
+}
+
+.k-editor-toolbar {
+  .k-dropdown,
+  .k-combobox {
+    .k-select {
+      min-width: 2.8rem;
+      min-height: 2.8rem;
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN KENDO COMPONENTS //
+
+.k-dropdown,
+.k-combobox,
+.k-datepicker,
+.k-timepicker,
+.k-numerictextbox {
+  display: block;
+
+  position: relative;
+
+  border-radius: $border-radius-sm;
+
+    .k-input {
+      display: inline-flex; // for case have avarta or img
+      flex-grow: 1;
+
+      padding: 1.2rem 0 1.2rem 1.6rem;
+
+      font-size: 1.4rem;
+      line-height: 1.4285714286;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      color: $color-grey-d20;
+      
+      overflow: hidden;
+    }
+
+  .k-select {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 4.4rem;
+
+    .k-icon {
+      &:before {
+        display: block;
+
+        color: $color-grey-l16;
+      }
+    }
+  }
+}
+
+.k-dropdown-wrap,
+.k-picker-wrap,
+.k-numeric-wrap {
+  display: flex;
+
+  &.k-state-disabled {
+    pointer-events: none;
+
+    .k-input,
+    .k-select .k-icon:before {
+      -webkit-text-fill-color: $color-grey-l40;
+      color: $color-grey-l40;
+    }
+  }
+
+  &.k-state-active {
+    .k-select .k-icon:before {
+      color: $color-blue-n0;
+    }
+  }
+
+  &.k-state-hover:not(.k-numeric-wrap) {
+    cursor: pointer;
+
+    .k-select .k-icon:before {
+      color: $color-blue-n0;
+    }
+  }
+}
+
+.k-reset {
+  outline: 0;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: 100%;
+  list-style: none;
+  text-decoration: none;
+
+  border: 0;
+}
+
+// END KENDO COMPONENTS //
+
+
+
+
+// BEGIN POPUP //
+
+%item-in-popup {
+  box-sizing: border-box;
+
+  position: relative;
+
+  display: flex;
+  min-height: 1.6rem;
+  margin: 0;
+  padding: 1rem 1.6rem;
+
+  color: $color-grey-n0;
+  font-size: 1.2rem;
+  line-height: 1.3333333333;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  overflow: hidden;
+  
+  .bubble {
+    width: 2rem;
+    min-width: 2rem;
+    height: 2rem;
+
+    span {
+      font-size: 1rem;
+    }
+  }
+
+  &.k-state-selected {
+    font-weight: 500;
+
+    color: $color-grey-d20;
+
+    .checkbox-item:before {
+      font-size: 1.2rem;
+      font-weight: bold;
+      line-height: 1.1666666667;
+      text-align: center;
+
+      color: $color-white;
+      background-color: $color-blue-n0;
+      border-color: $color-blue-n0;
+    }
+  }
+
+  &.k-state-hover {
+    cursor: pointer;
+
+    color: $color-grey-d20;
+
+    &:after {
+      content: '';
+
+      display: block;
+
+      position: absolute;
+      top: 0;
+      left: .8rem;
+      
+      width: calc(100% - 1.6rem);
+      height: 100%;
+
+      background-color: $color-light-l16;
+      border-radius: $border-radius-sm;
+
+      z-index: -1;
+    }
+
+    .k-group {
+      color: $color-grey-n0;
+    }
+  }
+
+  .checkbox-item {
+    position: relative;
+
+    padding-left: 2.4rem;
+
+    &:before {
+      @include icon-moon(0);
+
+      content: "\e90a";
+
+      display: block;
+    
+      position: absolute;
+      top: -.1rem;
+      left: 0;
+
+      width: 1.6rem;
+      height: 1.6rem;
+
+      background-color: $color-white;
+      border-radius: $border-radius-sm;
+      border: 1px solid $color-light-n0;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+    }
+  }
+}
+
+%group-heading {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4545454545;
+  text-transform: uppercase;
+}
+
+.k-animation-container {
+  box-sizing: content-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.k-list-optionlabel,
+.k-group-header {
+  @extend %item-in-popup;
+
+  padding-right: 1.6rem !important;
+
+  &:empty {
+    font-size: 0;
+    padding: 0;
+    min-height: 0;
+  }
+}
+
+.k-list-optionlabel,
+.k-group-header:not([style="display: none;"]) {
+  ~.k-list-scroller .k-list {
+    padding-top: 0;
+  }
+}
+
+.k-group-header {
+  @extend %group-heading;
+}
+
+.k-popup {
+  box-sizing: border-box;
+
+  min-width: 5.6rem !important;
+  height: auto !important;
+  padding: .8rem 0;
+
+  background-color: $color-white;
+  @include border-default($color-light-l12);
+  @include box-shadow-sticky();
+
+  &.k-state-border-up {
+    margin-top: .4rem;
+  }
+
+  &.k-state-border-down {
+    margin-top: -.4rem;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  // for 2 cases dropdown and timepicker. They render different
+  // .k-list-scroller for dropdown and &.k-list-scroller .k-list for timepicker
+  // .k-virtual-content for case dropdown loading Virtualization
+  .k-list-scroller,
+  &.k-list-scroller .k-list,
+  .k-virtual-content {
+    position: relative;
+
+    height: auto !important;
+    max-height: 36rem; // Max-height is 37.6rem, in this case minus total padding top and bottom is 1.6rem
+
+    overflow: auto;
+  }
+
+  .k-list {
+    list-style-type: none;
+
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    .k-item {
+      @extend %item-in-popup;
+      
+      &.k-first {
+        position: relative;
+
+        margin-top: 4.8rem;
+
+        overflow: visible;
+
+        &:before {
+          content: '';
+
+          display: block;
+
+          position: absolute;
+          top: -4rem;
+          left: 0;
+
+          width: 100%;
+          height: 1px;
+
+          background-color: $color-light-l12;
+        }
+      }
+
+      .k-group {
+        display: block;
+
+        position: absolute;
+        top: -2.4rem;
+
+        @extend %group-heading;
+
+        pointer-events: none;
+      }
+
+      &.k-state-focused {
+        .checkbox-item:before {
+          box-shadow: 0 0 0 1px $color-blue-d12;
+          border-color: $color-blue-d12;
+        }
+      }
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .k-virtual-list {
+    height: auto;
+
+    .k-virtual-item {
+      position: absolute;
+
+      width: 100%;
+      
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+
+  .k-nodata {
+    padding: 0;
+
+    div {
+      @extend %item-in-popup;
+    }
+  }
+}
+
+// END POPUP //

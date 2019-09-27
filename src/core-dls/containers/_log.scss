@@ -1,0 +1,44 @@
+// BEGIN LOG //
+
+.log-item {
+  position: relative;
+
+  display: flex;
+
+  &:after{
+    content: '';
+    position: absolute;
+    top: 3.6rem;
+    left: 1.1rem;  
+
+    width: 2px;
+    height: calc(100% - 1.6rem);
+
+    background-color: $color-light-l12;
+
+    z-index: 1;
+  }
+
+  &:last-child:after {
+    display: none;
+  }
+
+  .bubble {
+    z-index: 2;
+  }
+
+  .log-content {
+    width: 100%;
+    margin-left: .8rem;
+    padding: .8rem;
+
+    background-color: $color-light-l16;
+    border-radius: $border-radius-md;
+  }
+
+  + .log-item {
+    margin-top: 1.6rem;
+  }
+}
+
+// END LOG //

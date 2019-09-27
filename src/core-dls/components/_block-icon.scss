@@ -1,0 +1,79 @@
+.block-icon {
+  display: block;
+
+  width: 3.6rem;
+  height: 3.6rem;
+  padding: .6rem;
+
+  text-align: center;
+
+  border: .4rem solid;
+  border-radius: 50%;
+
+  [class^='icon-'] {
+    display: block;
+
+    width: 1.6rem;
+    height: 1.6rem;
+
+    font-size: 1.6rem;
+
+    color: $color-white;
+  }
+
+  &.borderless {
+    width: 3.2rem;
+    height: 3.2rem;
+    padding: .8rem;
+
+    border: none;
+  }
+
+  &.block-icon-blue {
+    background-color: $color-blue-n0;
+    border-color: $color-blue-l40;
+  }
+
+  &.block-icon-green {
+    background-color: $color-green-n0;
+    border-color: $color-green-l40;
+  }
+
+  &.block-icon-red {
+    background-color: $color-red-n0;
+    border-color: $color-red-l40;
+  }
+
+  &.block-icon-orange {
+    background-color: $color-orange-n0;
+    border-color: $color-orange-l40;
+  }
+
+  &.block-icon-purple {
+    background-color: $color-purple-n0;
+    border-color: $color-purple-l40;
+  }
+
+  &.block-icon-grey {
+    background-color: $color-light-n0;
+    border-color: $color-light-l16;
+  }
+
+  &.block-icon-cyan {
+    background-color: $color-cyan-n0;
+    border-color: $color-cyan-l40;
+  }
+  
+  &.s-28 {
+    width: 2.8rem;
+    height: 2.8rem;
+    padding: .4rem;
+
+    [class^='icon-'] {
+      width: 1.2rem;
+      height: 1.2rem;
+
+      font-size: 1.2rem;
+    }
+  }
+}

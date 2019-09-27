@@ -1,0 +1,122 @@
+// BEGIN NOTIFICATION //
+
+.k-popup.k-notification {
+  padding-top: 0;
+  
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+
+  cursor: pointer;
+
+  &.k-state-border-up,
+  &.k-state-border-down {
+    margin: 0;
+  }
+}
+
+.k-notification {
+  .k-notification-wrap {
+    display: inline-flex;
+    align-items: center;
+
+    max-width: 64rem;
+    margin: 1.6rem;
+    padding: .85rem 1.6rem;
+
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+
+    border-radius: $border-radius-xxl;
+
+    @include box-shadow-overlay();
+
+    &:before {
+      display: block;
+
+      margin-right: 1.6rem;
+
+      @include icon-moon(2rem);
+    }
+
+    .k-i-close, .k-i-x {
+      cursor: pointer;
+
+      &:before {
+        content: '\e912';
+
+        margin-left: 2.4rem;
+
+        @include icon-moon(1.2rem);
+      }
+    }
+  }
+
+  &.k-notification-success {
+    .k-notification-wrap {
+      color: $color-green-d16;
+      background-color: $color-green-l40;
+
+      &:before {
+        content: '\e946';
+        color: $color-green-d08;
+      }
+  
+      .k-i-close, .k-i-x {
+        &:before {
+          color: $color-green-d12;
+        }
+      }
+    }
+  }
+
+  &.k-notification-info {
+    .k-notification-wrap {
+      color: $color-cyan-d16;
+      background-color: $color-cyan-l40;
+
+      &:before {
+        content: '\e94f';
+        color: $color-cyan-d08;
+      }
+  
+      &:after {
+        color: $color-cyan-d12;
+      }
+    }
+  }
+
+  &.k-notification-warning {
+    .k-notification-wrap {
+      color: $color-orange-d16;
+      background-color: $color-orange-l40;
+
+      &:before {
+        content: '\e95b';
+        color: $color-orange-d08;
+      }
+  
+      &:after {
+        color: $color-orange-d12;
+      }
+    }
+  }
+
+  &.k-notification-error {
+    .k-notification-wrap {
+      color: $color-red-d16;
+      background-color: $color-red-l40;
+
+      &:before {
+        content: '\e91c';
+        color: $color-red-d08;
+      }
+  
+      &:after {
+        color: $color-red-d12;
+      }
+    }
+  }
+}
+
+// END NOTIFICATION //

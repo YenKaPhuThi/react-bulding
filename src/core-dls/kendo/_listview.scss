@@ -1,0 +1,139 @@
+// BEGIN LISTVIEW //
+
+.listview-container {
+  position: relative;
+
+    .listview-item {
+      &.listview-item-category {
+        &.active, &:focus, &:active {
+          cursor: pointer;
+          color: $color-white;
+          font-weight: 500;
+          background-color: $color-blue-n0;
+
+          .listview-item-category--count {
+            color: $color-white;
+          }
+        }
+      }
+    }
+}
+
+.listview-item {
+  padding: 1.6rem;
+
+  background-color: $color-white;
+
+  @include border-default;
+
+  transition: all .3s;
+
+  + .listview-item {
+    margin-top: 1.6rem;
+  }
+
+  .form-group-static {
+    margin-top: 1.6rem;
+  }
+
+  &.listview-item--orange {
+    background-color: $color-orange-l40;
+    border-color: $color-orange-l24;
+  }
+
+  &.listview-item-category {
+    padding: .8rem;
+
+    border: none;
+
+    + .listview-item {
+      margin-top: .4rem;
+    }
+
+    .listview-item-category--count {
+      color: $color-grey-l24;
+    }
+  }
+}
+
+.k-listview {
+  position: relative;
+  
+  min-height: 4.8rem; // For showing loading icon
+  
+  &.clickable {
+    .listview-item {
+      &:hover,
+      &.k-state-selected {
+        cursor: pointer;
+
+        background-color: $color-light-l20;
+      }
+
+      &.listview-item-category {
+        &:hover,
+        &.k-state-selected {
+          cursor: pointer;
+
+          color: $color-white;
+          font-weight: 500;
+
+          background-color: $color-blue-n0;
+
+          .block-icon {
+            background-color: $color-blue-l08;
+          }
+
+          .listview-item-category--count {
+            font-weight: 400;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// END LISTVIEW //
+
+
+
+
+// BEGIN CARD VIEW //
+
+.cardview-container .k-listview {
+  display: flex;
+  flex-wrap: wrap;
+
+  max-width: calc(100% + 2.4rem);
+  min-height: 4.8rem; // For showing loading icon
+  margin-left: -1.2rem;
+  margin-right: -1.2rem;
+}
+
+.cardview-item {
+  flex: 0 0 100%; // Prevent IE overflow when resize window
+
+  width: 33.333333%;
+  max-width: 33.333333%;
+  min-height: 1px; // Prevent columns from collapsing when empty
+  margin-top: 2.4rem;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+@media (max-width: 1023px) {
+  .cardview-item {
+    width: 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .cardview-item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+// END CARD VIEW //

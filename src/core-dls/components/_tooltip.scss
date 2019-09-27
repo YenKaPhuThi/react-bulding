@@ -1,0 +1,87 @@
+// BEGIN TOOLTIP //
+
+[data-toggle="tooltip"][data-trigger="hover"]:not([data-css-class="clickable"]) {
+  &:hover {
+    cursor: default;
+  }
+}
+
+.tooltip {
+  display: inline-block;
+
+  position: relative;
+  z-index: 2002;
+
+  @include border-default($color-light-l12);
+  @include box-shadow-overlay();
+
+  max-width: 40rem;
+  min-height: 3.6rem;
+  margin: 1.6rem;
+
+  background-color: $color-white;
+
+  &.tooltip-m-0 {
+    margin: 0;
+  }
+
+  .arrow,
+  .tooltip-inner {
+    background-color: $color-white;
+  }
+
+  .arrow {
+    display: block;
+
+    position: absolute;
+
+    height: 1.6rem;
+    width: 1.6rem;
+
+    @include border-default($color-light-l12, 1px, 2px);
+    @include box-shadow-raised();
+
+    transform: rotate(-45deg);
+  }
+
+  .tooltip-inner {
+    position: relative;
+
+    padding: .8rem 1.6rem;
+
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+
+    color: $color-grey-d20;
+    border-radius : $border-radius-md;
+  }
+
+  @each $type, $bg-color, $border-color, $color in (clickable, $color-blue-n0, $color-blue-n0, $color-white), (error, $color-red-l40, $color-red-l24, $color-red-d16) {
+    &.#{$type} {
+      background-color: #{$bg-color};
+      border-color: #{$border-color};
+
+      .arrow {
+        background-color: #{$bg-color};
+        border-color: #{$border-color};
+      }
+
+      .tooltip-inner {
+        color: #{$color};
+        background-color: #{$bg-color};
+      }
+    }
+  }
+
+  @each $direction, $dirMove, $opp in (top, left, bottom), (top-start, left, bottom), (top-end, left, bottom), (bottom, left, top), (bottom-start, left, top), (bottom-end, left, top), (left, top, right), (right, top, left) {
+    &[x-placement='#{$direction}'] {
+      margin-#{$opp}: 1.2rem;
+
+      .arrow {
+        #{$opp}: -.6rem;
+      }
+    }
+  }
+}
+
+// END TOOLTIP //

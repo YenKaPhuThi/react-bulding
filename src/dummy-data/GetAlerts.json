@@ -1,0 +1,27 @@
+{
+    "Status": 0,
+    "Data": [
+       {
+          "_Alert": "Account on Hold for Fraud",
+          "Priority": "High",
+          "CssColorClass": "error",
+          "Order": 3
+       },
+       {
+          "_Alert": "Card on Compliance Hold",
+          "Priority": "Medium",
+          "CssColorClass": "warning",
+          "Order": 2
+       },
+       {
+          "_Alert": "Caller ANI Match on Home Phone",
+          "Priority": "Low",
+          "CssColorClass": "information",
+          "Order": 1
+       }
+    ],
+    "Message": null,
+    "Result": "success",
+    "isValid": false,
+    "Key": null
+ }

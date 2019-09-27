@@ -1,0 +1,170 @@
+// BEGIN GENERAl //
+
+.form-group {
+  .k-dropdown {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+
+  &.form-group-sm {
+    .k-dropdown .k-select {
+      .k-icon:before {
+        font-size: .8rem;
+      }
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN DROPDOWN //
+
+[data-role="dropdownlist"] {
+  display: none;
+}
+
+.k-dropdown {
+  &:focus {
+    outline: none;
+  }
+
+  .k-input {
+    .bubble {
+      width: 2rem;
+      min-width: 2rem;
+      height: 2rem;
+
+      span {
+        font-size: 1rem;
+      }
+    }
+
+    .bubble,
+    [class^="icon-"],
+    [class*=" icon-"] {
+      display: inline-block;
+      
+      margin-right: .8rem;
+
+      font-size: 0;
+      vertical-align: top;
+    }
+
+    [class^="icon-"]:before,
+    [class*=" icon-"]:before {
+      font-size: 2rem;
+      color: $color-grey-l32;
+    }
+  }
+
+  .k-select {
+    min-width: 4.4rem;
+
+    .k-icon:before {
+      content: '\e976';
+      @include icon-moon(1.2rem);
+    }
+  }
+
+  &.no-border,
+  &.borderless {
+    display: inline-block;
+
+    position: relative;
+
+    width: auto;
+    max-width: 100%;
+
+    .k-dropdown-wrap {
+      padding: .4rem .8rem;
+      border-radius: $border-radius-sm;
+
+      &.k-state-focused,
+      &.k-state-hover {
+        background-color: $color-light-l16;
+      }
+    }
+
+    .k-input {
+      display: block;
+      padding: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .k-select {
+      justify-content: flex-end;
+
+      width: 2rem;
+      min-width: 2rem;
+      height: 2rem;
+      min-height: 2rem;
+    }
+  }
+}
+
+.k-dropdown-wrap {
+  &.k-state-disabled {
+    .bubble {
+      position: relative;
+
+      &:before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        height: inherit;
+        width: inherit;
+
+        background-color: rgba($color-white, .6);
+        border-radius: 50%;
+
+        z-index: 2;
+      }
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      color: $color-grey-l40;
+    }
+  }
+}
+
+.k-popup {
+  .k-list .k-item {
+    .bubble,
+    [class^="icon-"],
+    [class*=" icon-"] {
+      display: inline-block;
+
+      margin: -.2rem .8rem -.2rem 0;
+    }
+
+    .bubble {
+      vertical-align: -4px;
+    }
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      position: relative;
+
+      font-size: 2rem;
+      vertical-align: -4px;
+      color: $color-grey-l32;
+    }
+  }
+}
+
+.k-ie {
+  .k-dropdown.borderless {
+    display: inline-flex;
+  }
+}
+
+// END DROPDOWN //

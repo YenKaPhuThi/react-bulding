@@ -1,0 +1,44 @@
+// BEGIN GENERAL //
+
+.k-grid {
+  td,
+  th {
+    white-space: initial;
+    text-overflow: initial;
+    overflow: initial;
+  }
+
+  tr {
+    &.k-detail-row {
+      td.k-detail-cell {
+        padding: 1.6rem;
+      }
+    }
+  }
+  
+}
+
+.grid-overlay {
+  tr {
+    &:nth-child(-n+5) {
+      td {
+        position: relative;
+        .overlay-td {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255,255,255,0.4);
+          
+        }
+      }
+      td[role="gridcell"] {
+        background: $color-light-l20;
+      }
+    }
+  }
+}
+
+// END GENERAL //

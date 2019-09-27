@@ -1,0 +1,169 @@
+
+// BEGIN ANIMATION KEYFRAMES //
+
+@-webkit-keyframes navigation {
+  0%   { text-indent: 22rem; }
+  100% { text-indent: 0; }
+}
+
+@-moz-keyframes navigation {
+  0%   { text-indent: 22rem; }
+  100% { text-indent: 0; }
+}
+
+@keyframes navigation {
+  0%   { text-indent: 22rem; }
+  100% { text-indent: 0; }
+}
+
+@-webkit-keyframes loading {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@-moz-keyframes loading {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes loading {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+// END ANIMATION KEYFRAMES //
+
+
+
+
+// BEGIN ROOT ELEMENTS //
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  color: $color-grey-d20;
+}
+
+// END ROOT ELEMENTS //
+
+
+
+
+// BEGIN PLACEHOLDER //
+
+::-webkit-input-placeholder {
+  opacity: 1;
+  color: $color-grey-l32;
+  font-weight: 400;
+}
+
+:-ms-input-placeholder {
+  opacity: 1;
+  color: $color-grey-l32;
+  font-weight: 400;
+}
+
+:-moz-placeholder {
+  opacity: 1;
+  color: $color-grey-l32;
+  font-weight: 400;
+}
+
+::-moz-placeholder {
+  opacity: 1;
+  color: $color-grey-l32;
+  font-weight: 400;
+}
+
+// END PLACEHOLDER //
+
+
+
+
+// BEGIN REMOVE OUTLINE //
+
+a,
+button,
+input,
+select,
+textarea,
+[tabindex] {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+// END REMOVE OUTLINE //
+
+
+
+
+// BEGIN HEADINGS //
+
+h1, h2, h3, h4, h5 {
+  font-weight: 500;
+  margin: 0;
+}
+
+// END HEADINGS //
+
+
+
+
+// BEGIN GENERAL //
+
+input::-ms-clear,
+input::-ms-reveal {
+    display: none;
+}
+
+  // for input auto fill usename, password
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px $color-white inset;
+    background-color: $color-white !important;
+    border-color: $color-white;
+    -webkit-text-fill-color: $color-white !important;
+}
+
+.active {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+      -webkit-text-fill-color: $color-grey-d20 !important;
+  }
+}
+
+input,
+textarea {
+  &:disabled {
+    pointer-events: none;
+  }
+}
+
+label {
+  margin-bottom: 0;
+}
+
+mask {
+  color: $color-blue-l40;
+}
+
+button, html [type="button"],
+[type="reset"], [type="submit"] {
+  -webkit-appearance: inherit;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+// END GENERAL //

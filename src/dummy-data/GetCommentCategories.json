@@ -1,0 +1,22 @@
+[
+    {
+       "CategoryId": -1,
+       "Name": "All"
+    },
+    {
+       "CategoryId": 0,
+       "Name": "Authentication"
+    },
+    {
+       "CategoryId": 1,
+       "Name": "Balance Inquiry"
+    },
+    {
+       "CategoryId": 2,
+       "Name": "Lost Card"
+    },
+    {
+       "CategoryId": 3,
+       "Name": "Card activated"
+    }
+ ]

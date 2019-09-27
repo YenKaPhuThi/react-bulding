@@ -1,0 +1,144 @@
+// BEGIN CHART //
+
+.chart-donut,
+.chart-pie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .k-chart {
+    margin: 2.4rem;
+  }
+
+  .chart-legend {
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      font-size: 1.2rem;
+      line-height: 1.3333333333;
+
+      + li {
+        margin-top: .8rem;
+      }
+    }
+
+    .chart-legend__point {
+      width: 1.2rem;
+      min-width: 1.2rem;
+      height: 1.2rem;
+
+      border-radius: 50%;
+    }
+
+    .chart-legend__label {
+      max-width: 14rem;
+      padding: 0 .8rem;
+
+      color: $color-grey-n0;
+
+      white-space: nowrap; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chart-legend__value {
+      margin-left: auto;
+    }
+  }
+
+  .chart-content {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    text-align: center;
+
+    transform: translate(-50%, -50%);
+
+    .chart-content__main-text {
+      font-size: 3.2rem;
+      font-weight: 500;
+      line-height: 1.25;
+    }
+
+    .chart-content__help-text {
+      margin-top: .4rem;
+
+      color: $color-grey-l16;
+      font-size: 1.1rem;
+      line-height: 1.4545454545;
+      text-transform: uppercase;
+    }
+  }
+}
+
+// END CHART //
+
+
+
+
+// BEGIN CHART TOOLTIP //
+
+.k-chart-tooltip {
+  padding: 1.6rem;
+
+  background-color: $color-white;
+  @include border-default($color-light-l12);
+  border-radius: $border-radius-md;
+  @include box-shadow-raised();
+
+  header {
+    margin: -1.6rem -1.6rem .8rem;
+    padding: .8rem 1.6rem;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    border-bottom: 1px solid $color-light-l12;
+  }
+
+  .tooltip-item-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    
+    margin-left: -.4rem;
+    margin-right: -.4rem;
+    padding-top: .8rem;
+
+    &.topless {
+      padding-top: 0;
+    }
+  }
+
+  .tooltip-item-col {
+    padding-left: .4rem;
+    padding-right: .4rem;
+
+    font-size: 1.2rem;
+    line-height: 1.3333333333;
+  }
+
+  .dot {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: .6rem;
+  }
+
+  &.k-chart-shared-tooltip {
+    margin-left: 1.6rem;
+    margin-right: 1.6rem;
+  }
+}
+
+// END CHART TOOLTIP //

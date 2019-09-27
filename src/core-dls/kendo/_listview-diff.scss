@@ -1,0 +1,11 @@
+// BEGIN LISTVIEW //
+.listview-item {
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $color-light-l20;
+    cursor: pointer;
+  }
+}
+
+// END LISTVIEW //

@@ -1,0 +1,29 @@
+// BEGIN WINDOW //
+
+.k-window {
+  &.window-maximize {
+    .k-window-titlebar {
+      min-height: 6.2rem;
+    }
+    
+    .window-content-body {
+      background-color: initial;
+      &.window-content-body-comment {
+        display: flex;
+        padding: 0;
+        overflow: hidden;
+
+        .window-content-left {
+          padding: 2.4rem;
+          border-right: 1px solid $color-light-l12;
+        }
+
+        .window-content-container {
+          height: calc(100vh - 129px) !important;
+        }
+      }
+    }
+  }
+}
+
+// END WINDOW //

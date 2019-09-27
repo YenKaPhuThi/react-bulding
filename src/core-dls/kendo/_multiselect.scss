@@ -1,0 +1,232 @@
+// BEGIN GENERAL //
+
+.form-group {
+  .k-multiselect {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+
+  &.readonly {
+    .k-multiselect:not(.checkbox-multiselect) .k-button {
+      background-color: $color-light-l12;
+
+      .k-select .k-icon:before {
+        color: $color-grey-l40;
+      }
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN MULTI SELECT //
+
+[data-role="multiselect"] {
+  visibility: hidden;
+
+  height: 0;
+}
+
+.k-multiselect {
+  [data-role="multiselect"] {
+    visibility: visible;
+    
+    height: auto;
+  }
+
+  .k-multiselect-wrap {
+    position: relative;
+
+    min-height: 4.4rem;
+    padding: 1rem 1.6rem;
+
+    &:after {
+      content: "";
+      clear: both;
+
+      display: block;
+    }
+  }
+
+  .k-input {
+    float: left;
+
+    margin: .2rem;
+
+    border: none;
+    background-color: transparent;
+
+    &.k-readonly {
+      cursor: default;
+    }
+  }
+
+  .k-button {
+    display: inline-flex;
+    float: left;
+
+    position: relative;
+
+    margin: .2rem;
+    padding: .2rem .8rem;
+    
+    background-color: $color-blue-l40;
+    border-radius: $border-radius-sm;
+
+    align-items: center;
+    font-size: 1.2rem;
+    line-height: 1.3333333333;
+
+    overflow: hidden;
+
+    &.k-state-hover {
+      background-color: $color-blue-l32;
+    }
+
+    .k-select {
+      display: flex;
+
+      margin-left: .4rem;
+
+      align-items: center;
+
+      cursor: pointer;
+
+      .k-icon:before {
+        content: '\e912';
+
+        display: block;
+
+        @include icon-moon(1.2rem);
+        color: $color-grey-l16;
+      }
+    }
+  }
+
+  &.k-state-disabled {
+    .k-button {
+      color: $color-grey-l32;
+
+      background-color: $color-light-l12;
+
+      .k-select .k-icon:before {
+        color: $color-grey-l40;
+      }
+    }
+  }
+
+  &.checkbox-multiselect {
+    .k-multiselect-wrap {
+      display: flex;
+
+      position: relative;
+
+      padding: 2rem 4.4rem .4rem 1.6rem;
+
+      &:after {
+        content: "\e976";
+
+        position: absolute;
+        right: 1.6rem;
+        top: 1.6rem;
+        z-index: 2;
+
+        width: 1.2rem;
+        height: 1.2rem;
+
+        @include icon-moon(1.2rem);
+
+        color: $color-grey-l16;
+      }
+    }
+
+    &.k-state-hover,
+    &.k-state-border-down,
+    &.k-state-border-up {
+      cursor: pointer;
+
+      .k-multiselect-wrap:after {
+        color: $color-blue-n0;
+      }
+    }
+
+    .k-button,
+    .k-input {
+      float: none;
+
+      margin: 0;
+      padding: 0;
+
+      font-size: 1.4rem;
+      line-height: 1.4285714286;
+    }
+ 
+    .k-button {
+      background-color: transparent;
+      border-radius: 0;
+    }
+
+    .k-select {
+      display: none;
+    }
+
+    .k-input {
+      opacity: 0;
+    }
+
+    &.k-state-focused {
+      .k-multiselect-wrap:after {
+        color: $color-blue-n0;
+      }
+    }
+
+    &.k-state-disabled {
+      .k-multiselect-wrap:after {
+        color: $color-grey-l40;
+      }
+    }
+  }
+
+  &.no-border,
+  &.borderless {
+    display: inline-block;
+
+    position: relative;
+
+    width: auto;
+    max-width: 100%;
+    .k-multiselect-wrap {
+      min-height: 1.6rem;
+      padding: .4rem .8rem;
+      border-radius: $border-radius-sm;
+
+      &:after {
+        position: static;
+        justify-content: flex-end;
+        width: 2rem;
+        min-width: 2rem;
+        height: 2rem;
+        line-height: 2rem;
+        min-height: 2rem;
+        display: inline-flex;
+      }
+    }
+    &.k-state-focused,
+    &.k-state-hover,
+    &.k-state-border-down {
+      .k-multiselect-wrap {
+        background-color: $color-light-l16;
+      }
+    }
+
+    .k-input {
+      display: none;
+    }
+  }
+}
+
+// END MULTI SEELECT //
+

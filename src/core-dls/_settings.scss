@@ -1,0 +1,188 @@
+// BEGIN NORMAL VARIABLES//
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$color-grey-l08: #7A7A7A;
+$color-grey-l16: #8F8F8F;
+$color-grey-l24: #A3A3A3;
+$color-grey-l32: #B8B8B8;
+$color-grey-l40: #CCCCCC;
+$color-grey-n0: #666666;
+$color-grey-d04: #5C5C5C;
+$color-grey-d08: #525252;
+$color-grey-d12: #474747;
+$color-grey-d16: #3D3D3D;
+$color-grey-d20: #333333;
+
+
+$color-blue-l08: #4699F6;
+$color-blue-l16: #6DAFF8;
+$color-blue-l24: #94C4FA;
+$color-blue-l32: #BBD9FC;
+$color-blue-l40: #E1EFFE;
+$color-blue-n0: #1F84F4;
+$color-blue-d04: #0C79F3;
+$color-blue-d08: #0B70DF;
+$color-blue-d12: #0A66CC;
+$color-blue-d16: #095CB8;
+$color-blue-d20: #0852A5;
+
+
+$color-orange-l08: #FFC429;
+$color-orange-l16: #FFCF52;
+$color-orange-l24: #FFDB7A;
+$color-orange-l32: #FFE6A3;
+$color-orange-l40: #FFF1CC;
+$color-orange-n0: #FFB900;
+$color-orange-d04: #EBAA00;
+$color-orange-d08: #D69B00;
+$color-orange-d12: #C28D00;
+$color-orange-d16: #AD7E00;
+$color-orange-d20: #996F00;
+
+
+$color-cyan-l08: #35CCE7;
+$color-cyan-l16: #59D5EB;
+$color-cyan-l24: #7EDEF0;
+$color-cyan-l32: #A2E7F4;
+$color-cyan-l40: #C7F1F8;
+$color-cyan-n0: #1ABCD9;
+$color-cyan-d04: #18ACC7;
+$color-cyan-d08: #169CB5;
+$color-cyan-d12: #138DA2;
+$color-cyan-d16: #117D90;
+$color-cyan-d20: #0F6D7E;
+
+
+$color-red-l08: #F85244;
+$color-red-l16: #FA766C;
+$color-red-l24: #FB9B93;
+$color-red-l32: #FDBFBB;
+$color-red-l40: #FEE4E2;
+$color-red-n0: #F72D1D;
+$color-red-d04: #F61B09;
+$color-red-d08: #E31808;
+$color-red-d12: #CF1607;
+$color-red-d16: #BC1407;
+$color-red-d20: #A81206;
+
+
+$color-green-l08: #79E240;
+$color-green-l16: #92E763;
+$color-green-l24: #ABED87;
+$color-green-l32: #C4F2AA;
+$color-green-l40: #DCF7CE;
+$color-green-n0: #62D821;
+$color-green-d04: #5AC61E;
+$color-green-d08: #52B51C;
+$color-green-d12: #4AA319;
+$color-green-d16: #429116;
+$color-green-d20: #3A7F13;
+
+
+$color-purple-l08: #C049F7;
+$color-purple-l16: #CD70F9;
+$color-purple-l24: #DB97FA;
+$color-purple-l32: #E8BEFC;
+$color-purple-l40: #F6E5FE;
+$color-purple-n0: #B222F5;
+$color-purple-d04: #AB0EF4;
+$color-purple-d08: #9F0AE4;
+$color-purple-d12: #9109D0;
+$color-purple-d16: #8409BD;
+$color-purple-d20: #7608A9;
+
+
+$color-light-l04: #CCCCD5;
+$color-light-l08: #D7D7DE;
+$color-light-l12: #E3E3E8;
+$color-light-l16: #EEEEF1;
+$color-light-l20: #F9F9FA;
+$color-light-n0: #C1C1CC;
+$color-light-d04: #B6B6C3;
+$color-light-d08: #ABABBA;
+$color-light-d12: #9F9FB0;
+$color-light-d16: #9494A7;
+$color-light-d20: #89899E;
+
+
+$color-dark-l04: #50708E;
+$color-dark-l08: #587B9B;
+$color-dark-l12: #6185A6;
+$color-dark-l16: #6E8FAD;
+$color-dark-l20: #7B99B5;
+$color-dark-n0: #496681;
+$color-dark-d04: #425C74;
+$color-dark-d08: #3A5167;
+$color-dark-d12: #33475A;
+$color-dark-d16: #2B3D4D;
+$color-dark-d20: #243240;
+
+
+$color-cyan: #4DD0E1;
+$color-lime: #0BE9A4;
+$color-deep-sky: #2CA9EA;
+$color-khaki: #C0CC3D;
+$color-deep-pink: #FF587A;
+$color-yellow: #FFBC1F;
+$color-dark-purple: #684FB3;
+$color-magenta: #BD48ED;
+
+
+$color-chart-pb: #5CBAE6;
+$color-chart-co: #BCE05A;
+$color-chart-ca: #F66364;
+$color-chart-tr: #FCB665;
+$color-chart-sm: #D977C4;
+$color-chart-bm: #7777D9;
+$color-chart-sf: #BF7D69;
+$color-chart-pg: #77D97C;
+$color-chart-hu: #B3B262;
+$color-chart-cl: #FFB3B3;
+$color-chart-bb: #AAEAF2;
+$color-chart-wi: #AAA3D9;
+$color-chart-bg: #7C93A6;
+$color-chart-ru: #806060;
+
+// END NORMAL VARIABLES//
+
+
+
+
+// BEGIN BORDER RADIUS VARIABLES//
+
+$border-radius-xs: 2px;
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xxl: 200px;
+
+// END BORDER RADIUS VARIABLES//
+
+
+
+
+// BEGIN LOADING VARIAVLES //
+
+$loading-lg: (
+  url: "data:image/svg+xml,%3Csvg width='48px' height='48px' viewBox='0 0 48 48' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Eatom/other/loading/blue/large%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='atom/other/loading/blue/large' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M24,48 C10.745166,48 0,37.254834 0,24 C0,10.745166 10.745166,0 24,0 C37.254834,0 48,10.745166 48,24 C48,37.254834 37.254834,48 24,48 Z M24,44 C35.045695,44 44,35.045695 44,24 C44,12.954305 35.045695,4 24,4 C12.954305,4 4,12.954305 4,24 C4,35.045695 12.954305,44 24,44 Z' id='Oval' fill='%23000000' fill-rule='nonzero' opacity='0.2'%3E%3C/path%3E%3Cpath d='M40.9705627,40.9705627 L38.1421356,38.1421356 C41.8699543,34.4143169 44,29.3783233 44,24 C44,12.954305 35.045695,4 24,4 L24,0 C37.254834,0 48,10.745166 48,24 C48,30.4500936 45.4410906,36.5000349 40.9705627,40.9705627 Z' id='Oval' fill='%231F84F4' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E",
+  size: 48
+);
+
+$loading-md: (
+  url: "data:image/svg+xml,%3Csvg width='20px' height='20px' viewBox='0 0 20 20' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Eatom/other/loading/blue/normal%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='atom/other/loading/blue/normal' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M10,18 C14.418278,18 18,14.418278 18,10 C18,5.581722 14.418278,2 10,2 C5.581722,2 2,5.581722 2,10 C2,14.418278 5.581722,18 10,18 Z M10,20 C4.4771525,20 0,15.5228475 0,10 C0,4.4771525 4.4771525,0 10,0 C15.5228475,0 20,4.4771525 20,10 C20,15.5228475 15.5228475,20 10,20 Z' id='Oval' fill='%23000000' fill-rule='nonzero' opacity='0.2'%3E%3C/path%3E%3Cpath d='M17.0710678,17.0710678 L15.6568542,15.6568542 C17.1481115,14.165597 18,12.1515064 18,10 C18,5.581722 14.418278,2 10,2 L10,0 C15.5228475,0 20,4.4771525 20,10 C20,12.6873915 18.9336796,15.208456 17.0710678,17.0710678 Z' id='Oval-2' fill='%231F84F4' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E",
+  size: 20
+);
+
+$loading-sm: (
+  url: "data:image/svg+xml,%3Csvg width='16px' height='16px' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Eatom/other/loading/blue/small%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='atom/other/loading/blue/small' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M8,16 C3.581722,16 0,12.418278 0,8 C0,3.581722 3.581722,0 8,0 C12.418278,0 16,3.581722 16,8 C16,12.418278 12.418278,16 8,16 Z M8,14 C11.3137085,14 14,11.3137085 14,8 C14,4.6862915 11.3137085,2 8,2 C4.6862915,2 2,4.6862915 2,8 C2,11.3137085 4.6862915,14 8,14 Z' id='Oval' fill='%23000000' fill-rule='nonzero' opacity='0.2'%3E%3C/path%3E%3Cpath d='M13.6568542,13.6568542 L12.2426407,12.2426407 C13.3612458,11.1240356 14,9.61385104 14,8 C14,4.6862915 11.3137085,2 8,2 L8,0 C12.418278,0 16,3.581722 16,8 C16,10.1497362 15.1468139,12.1668946 13.6568542,13.6568542 Z' id='Oval' fill='%231F84F4' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E",
+  size: 16
+);
+
+$loading-xs: (
+  url: "data:image/svg+xml,%3Csvg width='12px' height='12px' viewBox='0 0 12 12' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch --%3E%3Ctitle%3Eatom/other/loading/blue/tiny%3C/title%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cg id='atom/other/loading/blue/tiny' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cpath d='M6,12 C2.6862915,12 0,9.3137085 0,6 C0,2.6862915 2.6862915,0 6,0 C9.3137085,0 12,2.6862915 12,6 C12,9.3137085 9.3137085,12 6,12 Z M6,10 C8.209139,10 10,8.209139 10,6 C10,3.790861 8.209139,2 6,2 C3.790861,2 2,3.790861 2,6 C2,8.209139 3.790861,10 6,10 Z' id='Oval' fill='%23000000' fill-rule='nonzero' opacity='0.2'%3E%3C/path%3E%3Cpath d='M10.2426407,10.2426407 L8.82842712,8.82842712 C9.57438013,8.08247412 10,7.07619573 10,6 C10,3.790861 8.209139,2 6,2 L6,0 C9.3137085,0 12,2.6862915 12,6 C12,7.61208084 11.3599483,9.12533311 10.2426407,10.2426407 Z' id='Oval-Copy' fill='%231F84F4' fill-rule='nonzero'%3E%3C/path%3E%3C/g%3E%3C/svg%3E",
+  size: 12
+);
+
+// BEGIN LOADING VARIAVLES //

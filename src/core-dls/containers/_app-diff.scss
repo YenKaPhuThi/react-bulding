@@ -1,0 +1,178 @@
+// BEGIN APPLICATION LEVEL //
+
+.sk-popup-body {
+  padding-top: 6.2rem;
+}
+
+.sk-popup-body-parameter {
+  padding-top: 6.8rem;
+}
+
+.sk-body {
+  padding-top: 6.2rem;
+  .main-content-wrapper {
+    min-height: calc(100vh - 11.6rem);
+  
+    ~ .sk-footer {
+      margin: .8rem 0 0;
+    }
+  }
+}
+
+.app-header {
+  height: initial;
+
+  padding: 1.2rem;
+
+  display: flex;
+  align-items: center;
+  min-height: 6.2rem;
+
+  border-top: initial;
+  box-shadow: initial;
+
+  border-bottom: .2rem solid $color-light-l12;
+
+  > div {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
+.app-branding {
+  display: initial;
+}
+
+.app-search-container {
+  width: 40.6rem;
+}
+
+.app-navigation-container {
+  flex-grow: 1;
+}
+
+.app-navigation {
+  display: flex;
+
+  .app-navigation-item {
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    color: $color-grey-d20;
+
+    transition: all .3s;
+
+    &:hover {
+      text-decoration: none;
+
+      color: $color-blue-n0;
+    }
+
+    + .app-navigation-item {
+      margin-left: 2.4rem;
+    }
+  }
+}
+
+.toolbar-wrapper.sk-toolbar-wrapper {
+  min-height: 58rem;
+}
+
+.sk-welcome-msg-container {
+  padding: 3.6rem 0 2.8rem;
+
+  text-align: center;
+}
+
+.navigation-bar-container.for-navigation-bar-static {
+  min-width: 31.2rem;
+}
+
+.navigation-bar.navigation-bar-static {
+  width: 31.2rem;
+  min-height: calc(100vh - 6.4rem);
+}
+
+.sk-login-body {
+  position: relative;
+  
+  background: $color-blue-d20 url('./../assets/images/sk-login-bg.jpg') no-repeat fixed center center;
+  background-size: cover;
+
+  .sk-footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    margin: 0;
+    color: $color-white;
+
+    background-color: transparent;
+
+    a.ext-link  {
+      color: $color-white;
+
+      &:hover,
+      &:active {
+        color: $color-white;
+      }
+    }
+  }
+}
+
+.sk-login-form-container {
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  min-height: 56rem;
+}
+
+.sk-login-form {
+  min-width: 32rem;
+  padding: 2.4rem;
+
+  text-align: center;
+
+  background-color: $color-white;
+  @include border-default($color-light-l12, 1px, $border-radius-lg);
+  @include box-shadow-raised();
+}
+
+.sk-login-branding {
+  height: 4.8rem;
+  width: auto;
+}
+
+.sk-login-fd-branding {
+  position: absolute;
+  left: 50%;
+  bottom: 6rem;
+
+  width: auto;
+  height: 2.4rem;
+
+  transform: translateX(-50%);
+}
+
+.sk-footer {
+  display: flex;
+  align-items: center;
+
+  margin: 2.4rem -2.4rem -2.4rem;
+  padding: 1.2rem 2.4rem;
+
+  font-size: 1.4rem;
+  line-height: 1.4285714286;
+
+  background-color: $color-light-l20;
+}
+
+@media (max-width: 767px) {
+  .app-header {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+}
+
+// END APPLICATION LEVEL //

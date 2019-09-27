@@ -1,0 +1,41 @@
+// BEGIN GENERAL //
+
+@each $selection in radio, checkbox {
+  .#{$selection}-list {
+    .#{$selection}-list--item {
+      .item-content {
+        .item-content-inner {
+          max-width: 24%;
+          flex-grow: 1;
+
+          &.align-self-center {
+            flex-grow: 0;
+            max-width: 14%;
+            width: 14%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.checkbox-list {
+  &.checkbox-only {
+    .checkbox-list--item {
+      border: 0;
+      background: transparent;
+
+      padding: 0;
+
+      input[type="checkbox"] {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
+      .item-status {
+        margin-left: 0;
+      }
+    }
+  }
+}
+// END GENERAL //

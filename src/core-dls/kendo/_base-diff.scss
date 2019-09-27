@@ -1,0 +1,29 @@
+// BEGIN KENDO COMPONENTS //
+
+.k-dropdown,
+.k-combobox,
+.k-datepicker,
+.k-timepicker,
+.k-numerictextbox {
+
+  .k-input {
+    .form-k-input-reset & {
+      display: block;
+    }
+  }
+}
+
+// END KENDO COMPONENTS //
+
+
+
+// BEGIN POPUP //
+.k-popup {
+  .k-list {
+    .k-item {
+      display: block;
+    }
+  }
+}
+
+// END POPUP //

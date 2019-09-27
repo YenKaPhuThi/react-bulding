@@ -1,0 +1,56 @@
+// BEGIN GENERAL //
+
+.form-group {
+  .k-datepicker {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+
+  &.form-group-sm {
+    .k-timepicker .k-select {
+      min-width: 4rem;
+
+      .k-icon:before {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+// END GENERAL //
+
+
+// BEGIN TIME PICKER //
+
+[data-role="timepicker"] {
+  display: none;
+}
+
+.k-timepicker {
+  [data-role="timepicker"] {
+    display: block;
+  }
+
+  .k-input {
+    background-color: transparent;
+    border: none;
+    border-radius: $border-radius-sm;
+  }
+
+  .k-select {
+    min-width: 5.2rem;
+    
+    .k-icon:before {
+      content: '\e954';
+      @include icon-moon(2rem);
+    }
+  }
+}
+
+.form-group {
+  .k-timepicker {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+}
+// END TIME PICKER //

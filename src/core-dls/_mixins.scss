@@ -1,0 +1,133 @@
+
+// BEGIN ICON FONT //
+
+@mixin icon-moon($size, $line-height: 1) {
+  vertical-align: middle;
+  text-transform: none;
+
+  font-family: 'icomoon' !important;
+  font-size: $size;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  line-height: $line-height;
+
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// END ICON FONT //
+
+
+
+
+// BEGIN MIXIN BORDER RADIUS //
+
+@mixin border-left-radius($radius: $border-radius-md) {
+   border-top-left-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+
+@mixin border-right-radius($radius: $border-radius-md) {
+   border-top-right-radius: $radius;
+   border-bottom-right-radius: $radius;
+}
+
+@mixin border-top-radius($radius: $border-radius-md) {
+   border-top-left-radius: $radius;
+   border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius($radius: $border-radius-md) {
+   border-bottom-right-radius: $radius;
+   border-bottom-left-radius: $radius;
+}
+
+// END MIXIN BORDER RADIUS //
+
+
+
+
+// BEGIN BOX SHADOWS //
+
+@mixin box-shadow-raised() {
+  box-shadow: 0 2px 4px 0 rgba(55, 58, 72, 0.12);
+}
+
+@mixin box-shadow-overlay() {
+  box-shadow: 0 4px 8px 0 rgba(55, 58, 72, 0.16);
+}
+
+@mixin box-shadow-sticky() {
+  box-shadow: 0 8px 16px 0 rgba(55, 58, 72, 0.2);
+}
+
+@mixin box-shadow-popout() {
+  box-shadow: 0 16px 32px 0 rgba(55, 58, 72, 0.24);
+}
+
+// END BOX SHADOWS //
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+// BEGIN BORDERS //
+
+@mixin border-default($border-color: $color-light-l04, $border-width: 1px, $radius: $border-radius-md) {
+  border: $border-width solid $border-color;
+  border-radius: $radius;
+}
+
+// END BORDERS //
+
+
+
+
+// BEGIN FONTFACE //
+
+@mixin fontface($fontFamily, $fileName, $fontStyle, $fontWeight) {
+  text-rendering: optimizeLegibility;
+  font-weight: $fontWeight;
+  font-style: $fontStyle;
+  font-family: $fontFamily;
+  src: url('./../assets/fonts/#{$fileName}.woff') format('woff'), url('./../assets/fonts/#{$fileName}.woff2') format('woff2');
+}
+
+// END FONTFACE //
+
+
+
+
+// BEGIN LOADING //
+
+@mixin loading($loading-type, $color: $color-blue-n0) {
+  $url: map-get($loading-type, url);
+  $size: map-get($loading-type, size);
+
+  width: #{$size/10 + "rem"};
+  height: #{$size/10 + "rem"};
+  margin-left: -#{$size/20 + "rem"};
+  margin-top: -#{$size/20 + "rem"};
+  
+  background-image: url(str-replace($url, str-slice(inspect($color-blue-n0), 2), str-slice(inspect($color), 2)));
+}
+
+// END LOADING //
+
+
+
+
+// BEGIN FUNCTIONS //
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
+// END FUNCTIONS //

@@ -1,0 +1,65 @@
+// BEGIN GENERAL //
+
+.form-group {
+  .form-control-label ~ .k-combobox .k-input {
+    opacity: 0;
+  }
+
+  &.active {
+    .form-control-label ~ .k-combobox .k-input {
+      opacity: 1;
+    }
+  }
+
+  .k-combobox {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN COMBOBOX //
+
+[data-role="combobox"] {
+  display: none;
+}
+
+.k-combobox {
+  .k-input {
+    background-color: transparent;
+    border-radius: $border-radius-sm;
+    border: none;
+
+    .bubble,
+    [class^="icon-"],
+    [class*=" icon-"] {
+      margin-right: .8rem;
+    }
+
+    [class^="icon-"]:before,
+    [class*=" icon-"]:before {
+      font-size: 2rem;
+      
+      color: $color-grey-l32;
+    }
+  }
+
+  .k-select {
+    justify-content: space-around;
+
+    width: 4.4rem;
+
+    .k-icon {
+      &:before {
+        content: '\e976';
+        @include icon-moon(1.2rem);
+      }
+    }
+  }
+}
+
+// END COMBOBOX //

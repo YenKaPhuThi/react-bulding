@@ -1,0 +1,165 @@
+// BEGIN GENERAL //
+
+.form-group {
+  &.form-group-sm {
+    .form-control-label {
+      display: none;
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN LABEL //
+
+.form-control-label {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 0;
+
+ &.disabled {
+    color: $color-grey-l40;
+  }
+}
+
+.form-group {
+  .form-control-label {
+    position: absolute;
+    left: 0;
+    top: 1.2rem;
+    z-index: 1;
+
+    padding-left: 1.6rem;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.4285714286;
+
+    color: $color-grey-l16;
+
+    pointer-events: none;
+
+    transition: top .2s, transform .2s;
+  }
+
+
+  &.active,
+  &.focus:not(.readonly) {
+    .form-control-label {
+      top: .4rem;
+
+      font-size: 1.1rem;
+      line-height: 1.4545454545;
+      text-transform: uppercase;
+    }
+
+    .required {
+      margin-left: .4rem;
+
+      vertical-align: -.1rem;
+    }
+  }
+
+  &.error {
+    .form-control-label:after {
+      content: '\e91c';
+
+      display: inline-block;
+
+      margin-left: .4rem;
+
+      @include icon-moon(1.2rem);
+
+      color: $color-red-n0;
+    }
+  }
+
+  &.disabled {
+    .form-control-label {
+      color: $color-grey-l40;
+    }
+
+    .required {
+      color: $color-grey-l40;
+    }
+  }
+}
+
+.form-help-text {
+  display: block;
+
+  margin-top: .4rem;
+
+  font-size: 1.2rem;
+  line-height: 1.3333333333;
+
+  color: $color-grey-l24;
+}
+
+// END LABEL //
+
+
+
+
+// BEGIN LABEL STATIC //
+
+.form-group-static {
+  .form-control-label {
+    display: block;
+
+    margin-bottom: .2rem;
+
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4545454545;
+    text-transform: uppercase;
+
+    color: $color-grey-l16;
+  }
+
+  &.form-group-sm {
+    .form-control-label {
+      margin-bottom: .2rem;
+
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  }
+}
+
+// END LABEL STATIC //
+
+
+
+
+// BEGIN SWITCH LABEL //
+
+.switch-control-label {
+  display: inline-block;
+
+  margin-top: .4rem;
+  margin-right: .8rem;
+
+  font-size: 1.4rem;
+  line-height: 1.4285714286;
+  vertical-align: top;
+
+  color: $color-grey-d20;
+}
+
+.switch-block {
+  .switch-control-label {
+    display: block;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    overflow: hidden;
+  }
+}
+
+// END SWITCH LABEL //

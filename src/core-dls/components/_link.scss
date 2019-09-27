@@ -1,0 +1,59 @@
+// BEGIN LINKS //
+
+a.link,
+.ext-link {
+  color: $color-blue-n0;
+  border: none;
+  font-size: 1.4rem;
+  &:hover,
+  &:focus {
+    color: $color-blue-l08;
+    text-decoration: underline;
+  }
+
+  &[tabindex] {
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+
+  &:active {
+    color: $color-blue-d12;
+    text-decoration: underline;
+  }
+
+  &.disabled {
+    color: $color-blue-l24;
+    pointer-events: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $color-blue-l24;
+      text-decoration: none;
+    }
+  }
+}
+
+.ext-link {
+  &:after {
+    content: "\e965";
+    
+    display: inline-block;
+    
+    margin-left: .4rem;
+
+    @include icon-moon(1.2rem);
+  }
+
+  &:hover,
+  &:focus {
+    &:after {
+      text-decoration: none;
+    }
+  }
+}
+
+// END LINKS //

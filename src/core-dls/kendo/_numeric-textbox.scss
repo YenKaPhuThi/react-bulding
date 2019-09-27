@@ -1,0 +1,120 @@
+// BEGIN GENERAL //
+
+.form-group {
+  &.form-group-sm {
+    .k-numerictextbox .k-select {
+      width: 3.2rem;
+
+      .k-link-increase,
+      .k-link-decrease {
+        height: 1.4rem;
+      }
+
+      .k-icon:before {
+        font-size: .8rem;
+      }
+    }
+  }
+
+  &.readonly {
+    .k-numeric-wrap.k-state-focused {
+      .k-input {
+        display: none !important;
+
+        &.k-formatted-value {
+          display: inline-block !important;
+        }
+      }
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN NUMERIC TEXTBOX //
+
+[data-role="numerictextbox"] {
+  display: none;
+}
+
+.k-numerictextbox {
+  [data-role="numerictextbox"] {
+    display: block;
+  }
+
+  .k-input {
+    border-radius: $border-radius-sm;
+    border: none;
+    background-color: transparent;
+
+    &[readonly="readonly"] ~ .k-select {
+      pointer-events: none;
+      
+      .k-link:hover .k-icon:before {
+        color: $color-grey-l16;
+        cursor: none;
+      }
+    }
+  }
+
+  .k-select {
+    position: relative;
+
+    flex-direction: column;
+
+    width: 4.4rem;
+    margin: auto;
+
+    .k-link-increase,
+    .k-link-decrease {
+      position: absolute;
+      right: 0;
+
+      display: flex;
+      justify-content: center;
+
+      width: 100%;
+      height: 2.2rem;
+
+      cursor: pointer;
+    }
+
+    .k-link-increase {
+      top: 0;
+
+      align-items: flex-end;
+
+      .k-icon:before {
+        content: '\e978';
+      }
+    }
+
+    .k-link-decrease {
+      bottom: 0;
+
+      align-items: flex-start;
+
+      .k-icon:before {
+        content: '\e976';
+      }
+    }
+
+    .k-icon {
+      &:before {
+        @include icon-moon(1.2rem);
+      }
+    }
+  }
+
+  .k-numeric-wrap:not(.k-state-disabled) {
+    .k-link:hover .k-icon:before {
+      color: $color-blue-n0;
+      cursor: pointer;
+    }
+  }
+}
+
+// END NUMERIC TEXTBOX //

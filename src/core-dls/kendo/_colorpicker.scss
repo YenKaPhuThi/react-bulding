@@ -1,0 +1,516 @@
+// BEGIN GENERAL //
+
+.form-control-label {
+  ~ .k-colorpicker {
+     .k-selected-color {
+      margin: 2rem 0 .4rem 1.6rem;
+    }
+
+    .value-picker {
+      top: 2rem;
+    }
+  }
+}
+
+.form-group {
+  &.readonly {
+    .k-colorpicker {
+      pointer-events: none;
+
+      .k-selected-color .k-i-line:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.form-group-sm {
+  .k-colorpicker {
+     .k-selected-color {
+      margin: .4rem 0 .4rem 1.2rem;
+    }
+
+    .value-picker {
+      top: .4rem;
+      left: 4rem;
+    }
+
+    .k-select {
+      .k-icon {
+        margin-right: 1.2rem;
+
+        &:before {
+          @include icon-moon(.8rem);
+        }
+      }
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN COLOR PICKER //
+
+[data-role="colorpicker"] {
+  display: none;
+}
+
+.k-colorpicker {
+  position: relative;
+
+  box-sizing: content-box;
+  display: block;
+
+  &:focus {
+    outline: none;
+  }
+
+  [data-role="colorpicker"] {
+    display: block;
+  }
+
+  .k-selected-color {
+    box-sizing: border-box;
+    display: block;
+
+    position: relative;
+
+    min-width: 2rem;
+    height: 2rem;
+    margin: 1.2rem 0 1.2rem 1.6rem;
+
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    &[style="background-color: rgb(255, 255, 255);"] {
+      border: 1px solid $color-light-l12;
+    }
+
+    &[style="background-color: rgba(255, 255, 255, 0);"] {
+      > .k-i-line {
+        display: block !important;
+      }
+
+      ~.value-picker {
+        color: transparent;
+
+        &:before {
+          content: 'No Color';
+
+          position: absolute;
+
+          display: block;
+
+          color: $color-grey-d20;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .k-i-line {
+      box-sizing: border-box;
+
+      position: absolute;
+      top: -.3rem;
+      left: -.3rem;
+
+      &:before {
+        content: '\e914';
+
+        @include icon-moon(2.4rem);
+
+        color: $color-light-l04;
+      }
+    }
+  }
+
+  .k-select {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    cursor: pointer;
+
+    .k-icon {
+      margin-right: 1.6rem;
+
+      &:before {
+        content: '\e976';
+
+        @include icon-moon(1.2rem);
+
+        color: $color-grey-l16;
+      }
+    }
+  }
+
+  .value-picker {
+    display: block;
+
+    position: absolute;
+    top: 1.2rem;
+    left: 4.4rem;
+
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+  }
+
+  &.with-hexcode {
+    .k-selected-color {
+      .k-i-line {
+        &:after {
+          content: 'No Color';
+
+          display: block;
+
+          position: absolute;
+          right: -6rem;
+          top: .3rem;
+
+          color: $color-grey-d20;
+          white-space: nowrap;
+
+          background-color: $color-white;
+
+          z-index: 2;
+        }
+      }
+    }
+  }
+
+  &.k-state-active {
+    .k-select .k-icon:before {
+      color: $color-blue-n0;
+    }
+  }
+
+  &.k-state-disabled {
+    .k-selected-color {
+      &:not([style="background-color: rgba(255, 255, 255, 0);"]) {
+        &:before {
+          content: '';
+
+          display: block;
+
+          position: absolute;
+          top: -1px;
+          left: -1px;
+
+          width: 2rem;
+          height: 2rem;
+
+          background-color: rgba($color-white, .6);
+          border-radius: 50%;
+
+          z-index: 2;
+        }
+      }
+
+      &[style="background-color: rgba(255, 255, 255, 0);"] {
+        ~.value-picker:before {
+          color: $color-grey-l40;
+        }
+      }
+
+      .k-i-line:after {
+        display: none;
+      }
+    }
+
+    .value-picker {
+      color: $color-grey-l40;
+    }
+
+    .k-i-line:before {
+      color: $color-light-l12;
+    }
+  }
+}
+
+// END COLOR PICKER //
+
+
+
+
+// BEGIN COLOR PALETTE //
+
+.k-palette {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  margin-top: -.8rem;
+  margin-bottom: -.8rem;
+
+  border-collapse: separate !important;
+  border-spacing: .8rem;
+}
+
+.k-colorpalette {
+  box-sizing: content-box;
+
+  max-width: inherit !important;
+  max-height: inherit;
+
+  .k-item {
+    box-sizing: border-box;
+
+    position: relative;
+
+    min-width: 2rem;
+    max-width: 2rem;
+    height: 2rem;
+    
+    border: 1px solid transparent;
+    border-radius: 50%;
+
+    transition: all .3s;
+
+    &:before {
+      content: '';
+
+      display: block;
+
+      position: absolute;
+      top: -.3rem;
+      left: -.3rem;
+      z-index: -1;
+
+      width: 2.4rem;
+      height: 2.4rem;
+
+      border-radius: $border-radius-sm;
+
+      transition: all .3s;
+    }
+
+    &:hover {
+      display: flex; // fix bug in safari
+    }
+
+    &.k-state-selected,
+    &:hover {
+      border-radius: $border-radius-sm;
+
+      &:before {
+        box-shadow: 0 1px 3px 1px rgba(55, 58, 72, 0.36);
+      }
+    }
+
+    &[aria-label="#ffffff"] {
+      border-color: $color-light-l12;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// END COLOR PALETTE //
+
+
+
+
+// BEGIN FLAT COLOR //
+
+.k-flatcolorpicker {
+  box-sizing: content-box;
+
+  position: relative;
+
+  width: 25rem;
+  height: 16.4rem !important;
+  padding: .8rem;
+
+  .k-selected-color {
+    position: absolute;
+    bottom: .8rem;
+    left: .8rem;
+
+    width: calc(100% - 1.6rem);
+    height: 3rem;
+  }
+
+  .k-selected-color-display {
+    border: 1px solid $color-light-n0;
+    border-radius: $border-radius-sm;
+  }
+
+  .k-clear-color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    right: .8rem;
+
+    width: 2rem;
+    height: 2rem;
+
+    border-radius: $border-radius-sm;
+
+    .k-icon {
+      position: relative;
+
+      cursor: pointer;
+    }
+
+    .k-i-reset-color:before {
+      content: '\e99e';
+
+      @include icon-moon(1.2rem);
+
+      color: $color-grey-l16;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      background-color: $color-light-l12;
+    }
+
+    &:hover,
+    &.k-state-focused {
+      background-color: $color-light-l16;
+
+      .k-i-reset-color:before {
+        color: $color-grey-l16;
+      }
+    }
+  }
+
+  .k-color-input {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+
+  .k-color-value {
+    width: calc(100% - 5.6rem);
+    padding: .4rem .8rem;
+
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+    color: $color-grey-n0;
+
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: $color-light-l04;
+    @include border-right-radius(3px);
+  }
+
+  .k-slider {
+    display: block;
+
+    position: relative;
+    
+    width: 25rem; // Need for speed
+
+    background-color: transparent;
+    border-width: 0;
+
+    user-select: none;
+  }
+}
+
+.k-hsv-rectangle {
+  position: relative;
+
+  border-radius: $border-radius-sm;
+
+  .k-hsv-gradient {
+    height: 10.8rem;
+    
+    background: linear-gradient(to bottom,rgba(0,0,0,0) 0,#000 100%),linear-gradient(to right,#fff 0,rgba(255,255,255,0) 100%);
+    border-radius: 3px;
+  }
+
+  .k-draghandle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+
+    width: .6rem;
+    height: .6rem;
+    margin-top: -.5rem;
+    margin-left: -.5rem;
+
+    background: 0 0;
+    border: 1px solid $color-light-l12;
+    border-radius: $border-radius-xxl;
+    box-shadow: 0 1px 3px 1px rgba(55, 58, 72, 0.36);
+
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.k-slider-horizontal {
+  height: 1.2rem;
+  width: 100%;
+  margin-top: .8rem;
+
+  .k-slider-wrap {
+    width: 100%;
+    height: 100%;
+  }
+
+  .k-slider-track {
+    background: -webkit-gradient(linear,left top,right top,from(red),color-stop(16%,#ff0),color-stop(33%,#0f0),color-stop(50%,#0ff),color-stop(67%,#00f),color-stop(84%,#f0f),to(#ff0004));
+    background: -webkit-linear-gradient(left,red 0,#ff0 16%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 84%,#ff0004 100%);
+    background: linear-gradient(to right,red 0,#ff0 16%,#0f0 33%,#0ff 50%,#00f 67%,#f0f 84%,#ff0004 100%);
+    border-radius: $border-radius-xxl;
+  }
+
+  .k-slider-track,
+  .k-slider-selection {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    min-width: 100%;
+    height: .4rem;
+    margin-top: -.2rem;
+    padding: 0;
+
+    cursor: pointer;
+  }
+
+  .k-draghandle {
+    position: absolute;
+    top: -.4rem;
+    
+    width: 1.2rem;
+    height: 1.2rem;
+
+    text-align: center;
+    text-indent: -300rem;
+    text-decoration: none;
+    
+    background-color: $color-white;
+    border-radius: $border-radius-xxl;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.21);
+
+    overflow: hidden;
+    outline: 0;
+  }
+}
+
+.k-slider-tooltip {
+  display: none;
+}
+
+// END FLAT COLOR //

@@ -1,0 +1,546 @@
+// BEGIN GENERAL RULESETS OF ICONFONT //
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -1px;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  &.s-8 {
+    font-size: .8rem;
+  }
+
+  &.s-12 {
+    font-size: 1.2rem;
+  }
+
+  &.s-16 {
+    font-size: 1.6rem;
+  }
+
+  &.s-20 {
+    font-size: 2rem;
+  }
+
+  &.s-24 {
+    font-size: 2.4rem;
+  }
+
+  &.s-28 {
+    font-size: 2.8rem;
+  }
+
+  &.s-32 {
+    font-size: 3.2rem;
+  }
+
+  &.s-36 {
+    font-size: 3.6rem;
+  }
+
+  &.s-40 {
+    font-size: 4rem;
+  }
+
+  &.s-44 {
+    font-size: 4.4rem;
+  }
+
+  &.s-48 {
+    font-size: 4.8rem;
+  }
+}
+
+// END  GENERAL RULESETS OF ICONFONT //
+
+
+
+
+// BEGIN ICON LIST OF ICONFONT //
+
+.icon-bell:before {
+  content: "\e900";
+}
+.icon-thumb-up:before {
+  content: "\e901";
+}
+.icon-code:before {
+  content: "\e902";
+}
+.icon-add-file:before {
+  content: "\e903";
+}
+.icon-paste:before {
+  content: "\e904";
+}
+.icon-align-center:before {
+  content: "\e905";
+}
+.icon-layout:before {
+  content: "\e906";
+}
+.icon-calendar:before {
+  content: "\e907";
+}
+.icon-next:before {
+  content: "\e908";
+}
+.icon-previous:before {
+  content: "\e909";
+}
+.icon-check:before {
+  content: "\e90a";
+}
+.icon-cross-with-circle:before {
+  content: "\e90b";
+}
+.icon-comment:before {
+  content: "\e90c";
+}
+.icon-complete:before {
+  content: "\e90d";
+}
+.icon-collapse-all:before {
+  content: "\e90e";
+}
+.icon-desktop:before {
+  content: "\e90f";
+}
+.icon-copy:before {
+  content: "\e910";
+}
+.icon-upload:before {
+  content: "\e911";
+}
+.icon-cross:before {
+  content: "\e912";
+}
+.icon-dashboard:before {
+  content: "\e913";
+}
+.icon-decline:before {
+  content: "\e914";
+}
+.icon-file:before {
+  content: "\e915";
+}
+.icon-descending:before {
+  content: "\e916";
+}
+.icon-download:before {
+  content: "\e917";
+}
+.icon-duplicate:before {
+  content: "\e918";
+}
+.icon-ecommerce:before {
+  content: "\e919";
+}
+.icon-edit:before {
+  content: "\e91a";
+}
+.icon-email:before {
+  content: "\e91b";
+}
+.icon-error:before {
+  content: "\e91c";
+}
+.icon-star:before {
+  content: "\e920";
+}
+.icon-filter:before {
+  content: "\e921";
+}
+.icon-folder:before {
+  content: "\e922";
+}
+.icon-book:before {
+  content: "\e923";
+}
+.icon-grid-view:before {
+  content: "\e924";
+}
+.icon-hide-password:before {
+  content: "\e925";
+}
+.icon-refresh:before {
+  content: "\e926";
+}
+.icon-information:before {
+  content: "\e927";
+}
+.icon-align-top-center:before {
+  content: "\e928";
+}
+.icon-list-view:before {
+  content: "\e929";
+}
+.icon-location:before {
+  content: "\e92b";
+}
+.icon-lock:before {
+  content: "\e92c";
+}
+.icon-logout:before {
+  content: "\e92d";
+}
+.icon-merchant-profile:before {
+  content: "\e92f";
+}
+.icon-cut:before {
+  content: "\e930";
+}
+.icon-mobile:before {
+  content: "\e931";
+}
+.icon-more:before {
+  content: "\e932";
+}
+.icon-network:before {
+  content: "\e933";
+}
+.icon-new-merchant:before {
+  content: "\e934";
+}
+.icon-eraser:before {
+  content: "\e935";
+}
+.icon-admin:before {
+  content: "\e937";
+}
+.icon-play:before {
+  content: "\e938";
+}
+.icon-image:before {
+  content: "\e939";
+}
+.icon-align-middle-center:before {
+  content: "\e93a";
+}
+.icon-pricing:before {
+  content: "\e93b";
+}
+.icon-processing:before {
+  content: "\e93d";
+}
+.icon-reorder:before {
+  content: "\e940";
+}
+.icon-report:before {
+  content: "\e941";
+}
+.icon-return:before {
+  content: "\e942";
+}
+.icon-align-bottom-center:before {
+  content: "\e944";
+}
+.icon-risk:before {
+  content: "\e945";
+}
+.icon-done:before {
+  content: "\e946";
+}
+.icon-scan-network:before {
+  content: "\e947";
+}
+.icon-search:before {
+  content: "\e948";
+}
+.icon-send:before {
+  content: "\e949";
+}
+.icon-show-password:before {
+  content: "\e94a";
+}
+.icon-sortby:before {
+  content: "\e94c";
+}
+.icon-align-justify:before {
+  content: "\e94d";
+}
+.icon-flag:before {
+  content: "\e94e";
+}
+.icon-megaphone:before {
+  content: "\e94f";
+}
+.icon-pie-chart:before {
+  content: "\e950";
+}
+.icon-suspend:before {
+  content: "\e952";
+}
+.icon-terminal:before {
+  content: "\e953";
+}
+.icon-time:before {
+  content: "\e954";
+}
+.icon-ascending:before {
+  content: "\e955";
+}
+.icon-user:before {
+  content: "\e956";
+}
+.icon-validate:before {
+  content: "\e957";
+}
+.icon-verify-merchant:before {
+  content: "\e958";
+}
+.icon-align-left:before {
+  content: "\e95a";
+}
+.icon-warning:before {
+  content: "\e95b";
+}
+.icon-user-mainternance:before {
+  content: "\e95c";
+}
+.icon-setting:before {
+  content: "\e95d";
+}
+.icon-text-underline:before {
+  content: "\e95e";
+}
+.icon-text-bold:before {
+  content: "\e95f";
+}
+.icon-text-color:before {
+  content: "\e960";
+}
+.icon-paint:before {
+  content: "\e961";
+}
+.icon-text-italic:before {
+  content: "\e962";
+}
+.icon-align-top-left:before {
+  content: "\e964";
+}
+.icon-popout:before {
+  content: "\e965";
+}
+.icon-phone:before {
+  content: "\e966";
+}
+.icon-mailbox:before {
+  content: "\e967";
+}
+.icon-level0:before {
+  content: "\e968";
+}
+.icon-level1:before {
+  content: "\e969";
+}
+.icon-level2:before {
+  content: "\e96a";
+}
+.icon-level3:before {
+  content: "\e96b";
+}
+.icon-level4:before {
+  content: "\e96c";
+}
+.icon-level5:before {
+  content: "\e96d";
+}
+.icon-level6:before {
+  content: "\e96e";
+}
+.icon-level7:before {
+  content: "\e96f";
+}
+.icon-level8:before {
+  content: "\e970";
+}
+.icon-level9:before {
+  content: "\e971";
+}
+.icon-link:before {
+  content: "\e972";
+}
+.icon-responded:before {
+  content: "\e973";
+}
+.icon-align-right:before {
+  content: "\e974";
+}
+.icon-remove-align:before {
+  content: "\e975";
+}
+.icon-arrow-down:before {
+  content: "\e976";
+}
+.icon-arrow-left:before {
+  content: "\e977";
+}
+.icon-arrow-up:before {
+  content: "\e978";
+}
+.icon-arrow-right:before {
+  content: "\e979";
+}
+.icon-last:before {
+  content: "\e97a";
+}
+.icon-first:before {
+  content: "\e97b";
+}
+.icon-bullet:before {
+  content: "\e97c";
+}
+.icon-number:before {
+  content: "\e97d";
+}
+.icon-indent:before {
+  content: "\e97e";
+}
+.icon-outdent:before {
+  content: "\e97f";
+}
+.icon-table:before {
+  content: "\e980";
+}
+.icon-col-delete:before {
+  content: "\e981";
+}
+.icon-col-left:before {
+  content: "\e982";
+}
+.icon-col-right:before {
+  content: "\e983";
+}
+.icon-row-above:before {
+  content: "\e984";
+}
+.icon-row-below:before {
+  content: "\e985";
+}
+.icon-row-delete:before {
+  content: "\e986";
+}
+.icon-spelling:before {
+  content: "\e987";
+}
+.icon-uppercase:before {
+  content: "\e988";
+}
+.icon-lowercase:before {
+  content: "\e989";
+}
+.icon-superscript:before {
+  content: "\e98a";
+}
+.icon-subscript:before {
+  content: "\e98b";
+}
+.icon-strike-through:before {
+  content: "\e98c";
+}
+.icon-right-down:before {
+  content: "\e98d";
+}
+.icon-left-down:before {
+  content: "\e992";
+}
+.icon-undo:before {
+  content: "\e993";
+}
+.icon-redo:before {
+  content: "\e994";
+}
+.icon-plus:before {
+  content: "\e995";
+}
+.icon-minus:before {
+  content: "\e996";
+}
+.icon-print:before {
+  content: "\e997";
+}
+.icon-align-middle-left:before {
+  content: "\e998";
+}
+.icon-align-bottom-left:before {
+  content: "\e999";
+}
+.icon-align-top-right:before {
+  content: "\e99a";
+}
+.icon-align-middle-right:before {
+  content: "\e99b";
+}
+.icon-align-bottom-right:before {
+  content: "\e99c";
+}
+.icon-lighting:before {
+  content: "\e99d";
+}
+.icon-no-color:before {
+  content: "\e99e";
+}
+.icon-table-wizard:before {
+  content: "\e99f";
+}
+.icon-unlink:before {
+  content: "\e9a0";
+}
+.icon-add-comment:before {
+  content: "\e9a1";
+}
+.icon-card-info:before {
+  content: "\e9a2";
+}
+.icon-card:before {
+  content: "\e9a3";
+}
+.icon-circle:before {
+  content: "\e9a5";
+}
+.icon-delete:before {
+  content: "\e9a7";
+}
+.icon-expand-all:before {
+  content: "\e9a8";
+}
+.icon-login:before {
+  content: "\e9ad";
+}
+.icon-trending-down:before {
+  content: "\e9af";
+}
+.icon-trending-up:before {
+  content: "\e9b0";
+}
+.icon-work:before {
+  content: "\e9b2";
+}
+.icon-menu:before {
+  content: "\e91d";
+}
+.icon-breach:before {
+  content: "\e91e";
+}
+.icon-partner:before {
+  content: "\e91f";
+}
+.icon-customer:before {
+  content: "\e92a";
+}
+.icon-category:before {
+  content: "\e92e";
+}
+
+// END ICON LIST OF ICONFONT //

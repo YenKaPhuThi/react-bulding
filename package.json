@@ -1,0 +1,74 @@
+{
+  "name": "sidekick-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@progress/kendo-data-query": "^1.5.2",
+    "@progress/kendo-react-dateinputs": "^3.3.0",
+    "@progress/kendo-react-dialogs": "^3.3.0",
+    "@progress/kendo-react-dropdowns": "^3.3.0",
+    "@progress/kendo-react-grid": "^3.3.0",
+    "@progress/kendo-react-inputs": "^3.3.0",
+    "@progress/kendo-react-intl": "^3.3.0",
+    "@progress/kendo-react-layout": "^3.3.0",
+    "@progress/kendo-react-tooltip": "^3.3.0",
+    "@types/axios": "^0.14.0",
+    "@types/classnames": "^2.2.9",
+    "@types/jest": "^24.0.18",
+    "@types/lodash": "^4.14.138",
+    "@types/node": "^12.7.3",
+    "@types/react": "^16.9.2",
+    "@types/react-bootstrap": "^0.32.19",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-loadable": "^5.5.1",
+    "@types/react-redux": "^7.1.2",
+    "@types/react-router-dom": "^4.3.5",
+    "axios": "^0.19.0",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.12.0",
+    "normalizr": "^3.4.1",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.8.6",
+    "react-loadable": "^5.5.0",
+    "react-redux": "^7.1.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "redux-saga": "^1.0.5",
+    "typesafe-actions": "^4.4.2",
+    "typescript": "^3.6.2",
+    "use-react-router": "^1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "serve": "serve -s build",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/ajv": "^1.0.0",
+    "@types/firebase": "^3.2.1",
+    "@types/webpack-env": "^1.14.0",
+    "ajv": "^6.10.2",
+    "firebase": "^6.5.0",
+    "serve": "^11.1.0"
+  }
+}

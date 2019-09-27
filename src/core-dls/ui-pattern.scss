@@ -1,0 +1,52 @@
+.ex-container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.bubble + .bubble,
+.badge + .badge{
+  margin-left: .8rem;
+}
+
+.ex-section {
+  padding-top: 2rem;
+
+  &.topless {
+    padding-top: 0;
+  }
+}
+
+.ex-display-button {
+  display: flex;
+  flex-direction: column;
+
+  .btn + .btn {
+    margin-left: 0;
+    margin-top: 1.6rem;
+  }
+}
+
+.ex-form-actions {
+  display: flex;
+  align-items: center;
+
+  font-size: 0;
+
+  .btn + .btn,
+  .btn-group + .btn-group {
+    margin-left: 1.6rem;
+  }
+
+  .btn.btn-sm + .btn.btn-sm,
+  .btn + .btn-link,
+  .btn-link + .btn,
+  .btn-link + .btn-link {
+    margin-left: .8rem;
+  }
+
+  .btn-link + .btn-icon,
+  .btn-icon + .btn-icon,
+  .btn + .btn-icon {
+    margin-left: .4rem;
+  }
+}

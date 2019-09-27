@@ -1,0 +1,98 @@
+.k-invalid-msg {
+  z-index: 99;
+
+  padding: .8rem 1.6rem;
+
+  color: $color-red-d16;
+
+  background-color: $color-red-l40;
+  @include border-default($color-red-l24);
+  @include box-shadow-raised();
+
+  &:before,
+  &:after {
+    content: "";
+
+    position: absolute;
+    top: calc(100% - .4rem);
+    left: 1.6rem;
+
+    width: 1rem;
+    height: 1rem;
+
+    background-color: $color-red-l40;
+    border-width: 0 0 .1rem .1rem;
+    border-style: solid;
+    border-color: $color-red-l24;
+    border-radius: 0 0 0 .2rem;
+
+    transform: rotate(-45deg);
+  }
+}
+
+%validator-bottom {
+  bottom: auto;
+  top: 100%;
+
+  margin-top: 1.2rem;
+  margin-bottom: 0;
+
+  &:before,
+  &:after {
+    top: auto;
+    bottom: calc(100% - .4rem);
+
+    transform: rotate(135deg);
+  }
+}
+
+.form-group {
+  .k-invalid-msg {
+    visibility: hidden;
+
+    position: absolute;
+    bottom: 100%;
+    left: -.1rem;
+    z-index: 99;
+
+    margin-bottom: 1.2rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all .3s;
+  }
+
+  > .k-state-border-up ~ .k-invalid-msg {
+    @extend %validator-bottom;
+  }
+
+  &.error-bottom {
+    .k-invalid-msg {
+      @extend %validator-bottom;
+    }
+  }
+
+  &.error-right {
+    .k-invalid-msg {
+      left: auto;
+      right: -.1rem;
+
+      &:before,
+      &:after {
+        left: auto;
+        right: 1.6rem;
+      }
+    }
+  }
+
+  &.focus {
+    &.error {
+      .k-invalid-msg {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+}

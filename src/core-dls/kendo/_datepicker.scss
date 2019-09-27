@@ -1,0 +1,282 @@
+// BEGIN GENERAL //
+
+.form-group {
+  .k-datepicker {
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+
+  &.form-group-sm {
+    .k-datepicker .k-select {
+      min-width: 4rem;
+
+      .k-icon:before {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN DATEPICKER //
+
+[data-role="datepicker"] {
+  display: none;
+}
+
+.k-datepicker {
+  .k-input {
+    background-color: transparent;
+    border-radius: $border-radius-sm;
+    border: none;
+
+    &[data-role="datepicker"] {
+      display: block;
+    }
+  }
+
+  .k-select {
+    min-width: 5.2rem;
+
+    .k-icon {
+      &:before {
+        content: '\e907';
+        @include icon-moon(2rem);
+      }
+    }
+  }
+}
+
+.k-calendar {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  width: 28.4rem;
+
+  overflow: hidden;
+
+  .k-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: .4rem 1.6rem 0;
+
+    .k-nav-fast {
+      padding: .4rem .8rem;
+
+      font-size: 1.4rem;
+      font-weight: 500;
+      line-height: 1.4285714286;
+      vertical-align: middle;
+
+      color: $color-grey-n0;
+
+      border-radius: $border-radius-sm;
+
+      &:active {
+        background-color: $color-light-l12;
+      }
+
+      &:hover {
+        background-color: $color-light-l16;
+
+        &:active {
+          background-color: $color-light-l12;
+        }
+
+        &.k-state-disabled {
+          color: $color-grey-l32;
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+
+      &.k-state-disabled {
+        color: $color-grey-l32;
+
+        pointer-events: none;
+      }
+    }
+
+    .k-nav-prev,
+    .k-nav-next {
+      padding: .4rem;
+
+      border: 1px solid transparent;
+      border-radius: $border-radius-sm;
+
+      .k-icon:before {
+        display: block;
+
+        @include icon-moon(2rem);
+
+        color: $color-grey-l16;
+      }
+
+      &.k-state-hover {
+        background-color: $color-light-l16;
+      }
+
+      &.k-state-disabled {
+        .k-icon:before {
+          color: $color-grey-l40;
+        }
+      }
+    }
+
+    .k-nav-prev {
+      .k-icon:before {
+        content: '\e909';
+      }
+    }
+
+    .k-nav-next {
+      .k-icon:before {
+        content: '\e908';
+      }
+    }
+  }
+
+  .k-content {
+    box-sizing: border-box;
+
+    display: block;
+    float: left;
+    table-layout: fixed;
+    
+    width: 100%;
+    padding: 1.2rem 1.6rem 1.6rem;
+
+    border-spacing: 0;
+    
+    outline: 0;
+
+    thead {
+      th {
+        width: 3.6rem;
+        height: 3.6rem;
+
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: center;
+      }
+    }
+
+    tbody td {
+      padding: 0;
+    }
+
+    &.k-month {
+      .k-link {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+    }
+
+    &.k-year,
+    &.k-decade,
+    &.k-century {
+      .k-link {
+        width: 5.3rem;
+        height: 3.8rem;
+      }
+    }
+
+    &.k-century {
+      .k-link {
+        height: 4.3rem;
+        padding-left: 1rem;
+
+        text-align: left;
+      }
+    }
+
+    .k-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: .4rem;
+
+      font-size: 1.2rem;
+      line-height: 1.3333333333;
+      text-align: center;
+
+      color: $color-grey-n0;
+
+      border: 1px solid transparent;
+      border-radius: $border-radius-md;
+    }
+
+    .k-other-month > .k-link {
+      color: $color-grey-l32;
+    }
+
+    .k-state-hover > .k-link {
+      background-color: $color-light-l12;
+      border-color: $color-light-l12;
+    }
+
+    .k-today > .k-link {
+      color: $color-blue-n0;
+
+      background-color: $color-white;
+      border-color: $color-blue-n0;
+    }
+
+    .k-state-selected > .k-link,
+    .k-state-focused > .k-link,
+    .k-state-hover.k-state-selected > .k-link,
+    .k-state-hover.k-state-focused > .k-link {
+      color: $color-white;
+
+      background-color: $color-blue-n0;
+      border-color: $color-blue-n0;
+    }
+  }
+
+  .k-footer {
+    padding: .8rem 1.6rem 0;
+
+    text-align: center;
+
+    border-top: 1px solid $color-light-l12;
+
+    .k-link {
+      display: inline-block;
+      padding: .4rem .8rem;
+
+      font-size: 1.4rem;
+      line-height: 1.42857142863;
+
+      color: $color-blue-n0;
+      border-radius: $border-radius-sm;
+
+      &:active {
+        background-color: $color-blue-l32;
+      }
+
+      &:hover {
+        color: $color-blue-n0;
+        background-color: $color-blue-l40;
+
+        &:active {
+          background-color: $color-blue-l32;
+        }
+      }
+    }
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+// END DATEPICKER //

@@ -1,0 +1,17 @@
+$primary-color: #E5AF06;
+
+.app-header {
+  border-top-color: $primary-color;
+}
+
+.app-branding {
+  background-image: url('images/logo.png');
+}
+
+.app-container {
+  &.login-page {
+    .app-branding {
+      background-image: url('images/login-logo.png');
+    }
+  }
+}

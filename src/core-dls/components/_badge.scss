@@ -1,0 +1,56 @@
+// BEGIN BADGE //
+
+.badge {
+  display: inline-block;
+
+  padding: .2rem .8rem;
+
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.3333333333;
+  text-align: center;
+  text-transform: capitalize;
+  white-space: nowrap;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius-xxl;
+
+  &.badge-cyan {
+    color: $color-cyan-d16;
+    background-color: $color-cyan-l40;
+    border-color: $color-cyan-l24;
+  }
+
+  &.badge-purple {
+    color: $color-purple-d16;
+    background-color: $color-purple-l40;
+    border-color: $color-purple-l24;
+  }
+
+  &.badge-green {
+    color: $color-green-d16;
+    background-color: $color-green-l40;
+    border-color: $color-green-l24;
+  }
+
+  &.badge-orange {
+    color: $color-orange-d16;
+    background-color: $color-orange-l40;
+    border-color: $color-orange-l24;
+  }
+
+  &.badge-red {
+    color: $color-red-d16;
+    background-color: $color-red-l40;
+    border-color: $color-red-l24;
+  }
+
+  &.badge-grey {
+    color: $color-light-d16;
+    background-color: $color-light-l20;
+    border-color: $color-light-l12;
+  }
+}
+
+// END BADGE //

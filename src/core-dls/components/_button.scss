@@ -1,0 +1,1061 @@
+// BEGIN GENERAL //
+
+%button {
+  display: inline-block;
+
+  position: relative;
+
+  font-size: 1.4rem;
+  line-height: 1.4285714286;
+  text-align: center;
+  text-decoration: none; 
+  white-space: nowrap;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: $border-radius-sm;
+
+  cursor: pointer;
+
+  transition: background .3s;
+
+  &:hover,
+  &.hover,
+  &:focus,
+  &.focus {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &.active,
+  &:active,
+  &:focus,
+  &.focus {
+    box-shadow: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:focus,
+  &.focus {
+    outline: none;
+
+    &.active,
+    &:active {
+      outline: none;
+    }
+  }
+
+  &[disabled],
+  &.disabled {
+    pointer-events: none;
+
+    opacity: 1;
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN BUTTON //
+
+a.btn,
+.btn {
+  @extend %button;
+
+  min-width: 8rem;
+  padding: .8rem 1.6rem;
+
+  font-weight: 500;
+
+  &.btn-primary {
+    color: $color-white;
+    background-color: $color-blue-n0;
+    border-color: transparent;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-blue-d08;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 1px $color-blue-d12;
+      border-color: $color-blue-d12;
+    }
+
+    &:focus,
+    &.focus,
+    &:hover,
+    &.hover {
+      color: $color-white;
+
+      background-color: $color-blue-l08;
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-blue-d08;
+        border-color: transparent;
+      }
+
+      &[disabled],
+      &.disabled {
+        background-color: $color-blue-l24;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      background-color: $color-blue-l24;
+    }
+  }
+
+  &.btn-secondary {
+    color: $color-grey-n0;
+    background-color: $color-white;
+    border-color: $color-light-l04;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-light-l12;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 1px $color-light-l04;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: $color-light-l16;
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        color: $color-grey-n0;
+
+        background-color: $color-light-l12;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $color-grey-l40;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      color: $color-grey-l40;
+    }
+  }
+
+  &.btn-negative {
+    color: $color-white;
+
+    background-color: $color-red-n0;
+    border-color: transparent;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-red-d08;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 1px $color-red-d12;
+      border-color: $color-red-d12;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      color: $color-white;
+
+      background-color: $color-red-l08;
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-red-d08;
+      }
+
+      &[disabled],
+      &.disabled {
+        background-color: $color-red-l16;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      background-color: $color-red-l16;
+    }
+  }
+
+  &.btn-lg {
+    min-width: 10rem;
+    padding: 1rem 1.6rem;
+
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+
+  &.btn-sm {
+    min-width: 6rem;
+    padding: .4rem 1.2rem;
+  }
+
+  &.btn-block {
+    display: block;
+    
+    width: 100%;
+
+    + .btn-block {
+      margin-top: 1.6rem;
+    }
+  }
+
+  &.hide {
+    display: none;
+  }
+
+  span + [class^="icon-"],
+  span + [class*=" icon-"] {
+    margin-left: .8rem;
+  }
+
+  &.loading {
+    min-height: 0;
+
+    &:after {
+      display: none;
+    }
+
+    &.btn-primary,
+    &.btn-secondary,
+    &.btn-negative {
+      color: transparent;
+
+      &:focus {
+        color: transparent;
+      }
+    }
+    
+    &.btn-secondary {
+      &:before {
+        @include loading($loading-md);
+      }
+  
+      &.btn-sm:before{
+        @include loading($loading-sm);
+      }
+    }
+  
+    &.btn-primary,
+    &.btn-negative {
+      border-color: transparent;
+  
+      &:before {
+        @include loading($loading-md, $color-white);
+      }
+  
+      &.btn-sm:before {
+        @include loading($loading-sm, $color-white);
+      }
+    }
+  
+    &.btn-primary {
+      background-color: $color-blue-l16;
+    }
+
+    &.btn-secondary {
+      background-color: $color-light-l16;
+    }
+  
+    &.btn-negative {
+      background-color: $color-red-l16;
+    }
+  }
+}
+
+// END BUTTON //
+
+
+
+
+/// BEGIN BUTTON LINK //
+
+a.btn-link,
+.btn-link {
+  @extend %button;
+
+  padding: .8rem;
+
+  font-weight: normal;
+
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 0;
+
+  &.btn-link-primary {
+    color: $color-blue-n0;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-blue-l32;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      color: $color-blue-n0;
+
+      background-color: $color-blue-l40;
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-blue-l32;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $color-blue-l24;
+
+        background-color: transparent;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      color: $color-blue-l24;
+    }
+  }
+
+  &.btn-link-secondary {
+    color: $color-grey-n0;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-light-l12;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      color: $color-grey-n0;
+
+      background-color: $color-light-l16;
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-light-l12;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $color-grey-l40;
+
+        background-color: transparent;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      color: $color-grey-l40;
+    }
+  }
+
+  &.btn-link-negative {
+    color: $color-red-n0;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-red-l32;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      color: $color-red-n0;
+
+      background-color: $color-red-l40;
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-red-l32;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $color-red-l24;
+
+        background-color: transparent;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      color: $color-red-l24;
+    }
+  }
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    margin-right: .2rem;
+    padding: .2rem;
+
+    font-size: 1.6rem;
+  }
+
+  &.btn-link-sm {
+    padding: .4rem .8rem;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      margin-right: .2rem;
+      padding: .2rem;
+
+      font-size: 1.2rem;
+    }
+  }
+
+  &.loading {
+    min-height: 0;
+    
+    &:after {
+      display: none;
+    }
+
+    &.btn-link-primary,
+    &.btn-link-secondary,
+    &.btn-link-negative {
+      color: transparent;
+
+      &:focus {
+        color: transparent;
+      }
+    }
+    
+    &.btn-link-primary,
+    &.btn-link-secondary {
+      &:before {
+        @include loading($loading-md);
+      }
+
+      &.btn-link-sm:before {
+        @include loading($loading-sm);
+      }
+    }
+  
+    &.btn-link-negative {
+      border-color: transparent;
+  
+      &:before {
+        @include loading($loading-md, $color-white);
+      }
+  
+      &.btn-link-sm:before {
+        @include loading($loading-sm, $color-white);
+      }
+    }
+  
+    &.btn-link-primary {
+      background-color: $color-blue-l40;
+    }
+  
+    &.btn-link-secondary {
+      background-color: $color-light-l16;
+    }
+  
+    &.btn-link-negative {
+      background-color: $color-red-l40;
+    }
+  }
+}
+
+
+
+// END BUTTON LINK //
+
+
+
+
+// BEGIN BUTTON ICON //
+
+a.btn-icon,
+.btn-icon {
+  @extend %button;
+
+  padding: .4rem;
+
+  line-height: 0;
+
+  background-color: transparent;
+  border-color: transparent;
+  border-width: 0;
+
+  [class^="icon-"],
+  [class*=" icon-"] {
+    display: inline-block;
+
+    font-size: 2rem;
+  }
+
+  &.btn-icon-primary {
+    color: $color-blue-n0;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-blue-l32;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      color: $color-blue-n0;
+
+      background-color: $color-blue-l40;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      background-color: $color-blue-l40;
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-blue-l32;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $color-blue-l24;
+
+        background-color: transparent;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      color: $color-blue-l24;
+    }
+  }
+
+  &.btn-icon-secondary {
+    color: $color-grey-l16;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-light-l12;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      color: $color-grey-l16;
+
+      background-color: $color-light-l16;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-light-l12;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $color-grey-l40;
+
+        background-color: transparent;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      color: $color-grey-l40;
+    }
+  }
+
+  &.btn-icon-negative {
+    color: $color-red-n0;
+
+    &:active,
+    &.active,
+    &[aria-expanded="true"] {
+      background-color: $color-red-l32;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      color: $color-red-n0;
+
+      background-color: $color-red-l40;
+    }
+
+    &:hover,
+    &.hover,
+    &:focus,
+    &.focus {
+      &:active,
+      &.active,
+      &[aria-expanded="true"] {
+        background-color: $color-red-l32;
+      }
+
+      &[disabled],
+      &.disabled {
+        color: $color-red-l24;
+
+        background-color: transparent;
+      }
+    }
+
+    &[disabled],
+    &.disabled {
+      color: $color-red-l24;
+    }
+  }
+
+  &.btn-icon-sm {
+    line-height: 0;
+
+    [class^="icon-"],
+    [class*=" icon-"] {
+      font-size: 1.2rem;
+    }
+  }
+
+  &.with-dot {
+    position: relative;
+
+    &:after {
+      content: "";
+
+      display: block;
+
+      position: absolute;
+      top: .2rem;
+      right: .2rem;
+      z-index: 2;
+
+      width: .6rem;
+      height: .6rem;
+
+      background-color: $color-red-n0;
+
+      border-radius: 50%;
+    }
+  }
+
+  &.btn-nav-toggle {
+    padding: .8rem;
+    margin-left: -1.6rem;
+    margin-right: .8rem;
+
+    border-width: 0;
+    border-radius: .8rem;
+
+    .expand-icon {
+      display: none;
+    }
+
+    .collapse-icon {
+      display: block;
+    }
+
+    &.navigation-expanded {
+      background-color: $color-light-l12;
+
+      .expand-icon {
+        display: block;
+      }
+
+      .collapse-icon {
+        display: none;
+      }
+    }
+  }
+
+  &.loading {
+    min-height: 0;
+    
+    &:after {
+      display: none;
+    }
+
+    &.btn-icon-primary,
+    &.btn-icon-secondary,
+    &.btn-icon-negative {
+      color: transparent;
+
+      &:focus {
+        color: transparent;
+      }
+    }
+
+    &.btn-icon-primary,
+    &.btn-icon-secondary {
+      &:before {
+        @include loading($loading-sm);
+      }
+
+      &.btn-icon-sm:before {
+        @include loading($loading-xs);
+      }
+    }
+  
+    &.btn-icon-negative {
+      border-color: transparent;
+  
+      &:before {
+        @include loading($loading-sm, $color-white);
+      }
+  
+      &.btn-icon-sm:before {
+        @include loading($loading-xs, $color-white);
+      }
+    }
+
+    &.btn-icon-primary {
+      background-color: $color-blue-l40;
+    }
+
+    &.btn-icon-secondary {
+      background-color: $color-light-l16;
+    }
+
+    &.btn-icon-negative {
+      background-color: $color-red-l40;
+    }
+  }
+
+  [data-role="collapse-icon"] {
+    display: block;
+  }
+  
+  [data-role="expand-icon"] {
+    display: none;
+  }
+
+  &.collapsed {
+    [data-role="collapse-icon"] {
+      display: none;
+    }
+
+    [data-role="expand-icon"] {
+      display: block;
+    }
+  }
+}
+
+// END BUTTON ICON //
+
+
+
+
+// BEGIN LIST BUTTONS//
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  margin-top: 3.2rem;
+
+  .btn + .btn {
+    margin-left: 1.6rem;
+  }
+
+  .btn {
+    + .btn-link,
+    + .btn-icon {
+      margin-left: .8rem;
+    } 
+  }
+
+  .btn-link,
+  .btn-icon {
+    + .btn {
+      margin-left: .8rem;
+    }
+  }
+
+  .btn-icon + .btn-icon {
+    margin-left: 1.6rem;
+  }
+
+  &.form-actions-justified {
+    .btn {
+      flex-grow: 1;
+      flex-basis: 100%;
+    }
+  }
+
+  &.form-actions-sm {
+    margin-top: 2.4rem;
+
+    .btn-sm + .btn-sm,
+    .btn-group-sm + .btn-group-sm {
+      margin-left: .8rem;
+    }
+
+    .btn-sm + .btn-link-sm,
+    .btn-link-sm + .btn-sm,
+    .btn-link-sm + .btn-link-sm,
+    .btn-icon-sm + .btn-icon-sm
+    {
+      margin-left: .4rem;
+    }
+  }
+
+  &.topless {
+    margin-top: 0;
+  }
+}
+
+// END LIST BUTTONS //
+
+
+
+
+// BEGIN BUTTON GROUP //
+
+.btn-group {
+  display: inline-flex;
+
+  .btn {
+    border-radius: 0;
+
+    + .btn {
+      margin-left: -1px !important;
+    }
+
+    &:first-child {
+      @include border-left-radius($border-radius-sm);
+    }
+
+    &:last-child {
+      @include border-right-radius($border-radius-sm);
+    }
+
+    &:focus {
+      z-index: 1;
+    }
+  }
+}
+
+// END BUTTON GROUP //
+
+
+
+
+// BEGIN RADIO GROUP //
+
+.radio-group {
+  display: flex;
+
+  .radio-item {
+    position: relative;
+
+    &:first-child {
+      .radio-item--text {
+        border-left-width: 1px;
+        border-radius: .4rem 0 0 .4rem;
+      }
+    }
+
+    &:last-child {
+      .radio-item--text {
+        border-radius: 0 .4rem .4rem 0;
+      }
+    }
+
+    &:hover {
+      .radio-item--text {
+        color: $color-blue-n0;
+      }
+    }
+  }
+
+  .radio-item--input {
+    opacity: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:checked {
+      cursor: default;
+
+      + .radio-item--text {
+        color: $color-grey-n0;
+        background-color: $color-light-l16;
+
+        &:hover {
+          color: $color-grey-n0;
+        }
+      }
+    }
+  }
+
+  .radio-item--text {
+    display: block;
+
+    padding: .6rem 1.2rem;
+
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.3333333333;
+
+    color: $color-grey-n0;
+
+    border-style: solid;
+    border-color: $color-light-l04;
+    border-width: 1px 1px 1px 0;
+
+    transition: all .3s;
+  }
+}
+
+// END RADIO GROUP //
+
+
+
+
+// BEGIN EXPAND/COLLAPSE BUTTON //
+
+[data-role="btn-toggle-expand-collapse"] {
+  [data-role="icon-expand"] {
+    display: block;
+  }
+
+  [data-role="icon-collapse"] {
+    display: none;
+  }
+
+  &[aria-expanded="true"] {
+    [data-role="icon-expand"] {
+      display: none;
+    }
+
+    [data-role="icon-collapse"] {
+      display: block;
+    }
+  }
+}
+
+// END EXPAND/COLLAPSE BUTTON //
+
+
+
+
+// BEGIN ADD ITEM BUTTON //
+
+.btn-add-item {
+  @extend %button;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  padding: 2rem;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: $color-blue-n0;
+  background-color: $color-light-l20;
+  border-width: 0;
+  border-radius: $border-radius-md;
+
+  i {
+    font-size: 2rem;
+    margin-right: .4rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-blue-l40;
+  }
+}
+
+// END ADD ITEM BUTTON //
+
+
+
+
+// BEGIN CONTAINER //
+
+.actions-container {
+  display: flex;
+  justify-content: flex-end;
+  
+  .btn + .btn,
+  .btn-icon + .btn-icon {
+    margin-left: 1.6rem;
+  }
+
+  .btn-link + .btn-link {
+    margin-left: .8rem;
+  }
+
+  .btn.btn-block,
+  a.btn.btn-block {
+    width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .actions-container {
+    .btn.btn-block,
+    a.btn.btn-block {
+      width: 100%;
+    }
+  }
+}
+
+
+// END CONTAINER //

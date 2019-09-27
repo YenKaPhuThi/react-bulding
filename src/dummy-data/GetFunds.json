@@ -1,0 +1,52 @@
+{
+    "Data": [
+       {
+          "FundingStatus": "Pending",
+          "ReceiptDate": "2018-05-15T00:00:00",
+          "ApplyDate": "2018-05-17T00:00:00",
+          "FundDescription": "Deposit to Account",
+          "AmountCredited": 500,
+          "AmountCharged": 91,
+          "PaymentMethod": ""
+       },
+       {
+          "FundingStatus": "Pending",
+          "ReceiptDate": "2018-05-15T00:00:00",
+          "ApplyDate": "2018-05-17T00:00:00",
+          "FundDescription": "Deposit to Account",
+          "AmountCredited": 500,
+          "AmountCharged": 128,
+          "PaymentMethod": ""
+       },
+       {
+          "FundingStatus": "Pending",
+          "ReceiptDate": "2018-05-15T00:00:00",
+          "ApplyDate": "2018-05-17T00:00:00",
+          "FundDescription": "Deposit to Account",
+          "AmountCredited": 500,
+          "AmountCharged": 11,
+          "PaymentMethod": ""
+       },
+       {
+          "FundingStatus": "Cleared",
+          "ReceiptDate": "2018-05-13T00:00:00",
+          "ApplyDate": "2018-05-15T00:00:00",
+          "FundDescription": "Deposit to Account",
+          "AmountCredited": 506.17,
+          "AmountCharged": 506.17,
+          "PaymentMethod": ""
+       },
+       {
+          "FundingStatus": "Cleared",
+          "ReceiptDate": "2018-05-13T00:00:00",
+          "ApplyDate": "2018-05-15T00:00:00",
+          "FundDescription": "Deposit to Account",
+          "AmountCredited": 506.17,
+          "AmountCharged": 506.17,
+          "PaymentMethod": ""
+       }
+    ],
+    "Total": 5,
+    "AggregateResults": null,
+    "Errors": null
+ }

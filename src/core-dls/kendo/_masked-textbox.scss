@@ -1,0 +1,52 @@
+// BEGIN GENERAL //
+
+.form-group {
+  &.form-group-sm {
+    .k-maskedtextbox .k-textbox {
+      padding: .4rem 1.2rem;
+    }
+  }
+}
+
+// END GENERAL //
+
+
+
+
+// BEGIN MASKEDTEXTBOX //
+
+[data-role="maskedtextbox"] {
+  display: none;
+}
+
+.k-maskedtextbox {
+  .k-textbox {
+    padding: 2rem 1.6rem .4rem 1.6rem;
+
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+
+    background-color: transparent;
+    border: none;
+    border-radius: $border-radius-sm;
+
+    &[data-role="maskedtextbox"] {
+      display: block;
+    }
+  }
+
+  &.k-state-disabled {
+    .k-textbox {
+      color: $color-grey-l40;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      
+      -webkit-text-fill-color: $color-grey-l40;
+    }
+  }
+}
+
+// END MASKEDTEXTBOX //

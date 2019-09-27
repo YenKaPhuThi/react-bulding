@@ -1,0 +1,261 @@
+// BEGIN PROGRESS TRACKER //
+
+.pt-container {
+  display: flex;
+
+  position: relative;
+
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.pt-item {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+
+  margin-top: auto;
+
+  &:first-child {
+    .pt-text {
+      left: 0;
+
+      width: 50%;
+      margin-left: 0;
+
+      text-align: left;
+    }
+  }
+
+  &:last-child {
+    flex-grow: 0;
+    align-items: flex-end;
+
+    width: 2rem;
+    max-width: 2rem;
+    min-width: 2rem;
+
+    &:before {
+      display: none;
+    }
+
+    .pt-text {
+      left: auto;
+
+      width: 15rem;
+      margin-left: 0;
+
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: relative;
+    display: block;
+    left: 2.4rem;
+    bottom: 1.1rem;
+
+    width: calc(100% - 2.8rem);
+    height: 2px;
+    margin-bottom: -2px;
+
+    background-color: $color-light-n0;
+  }
+
+  &.active {
+    .pt-text {
+    color: $color-grey-d20;
+
+    &:hover {
+      color: $color-blue-n0;
+      }
+    }
+
+    .pt-circle {
+      border-color: $color-blue-n0;
+
+      &:before {
+        background-color: $color-blue-n0;
+      }
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+
+    .pt-text {
+      color: $color-grey-l40;
+
+      pointer-events: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .pt-circle {
+      pointer-events: none;
+
+      border-color: $color-light-l16;
+      background-color: $color-light-l16;
+
+      &:before {
+        background-color: $color-light-l16;
+      }
+    }
+  }
+
+  @each $state, $color, $disabled in (in-progress, $color-orange-n0, $color-orange-l32), (done, $color-green-n0, $color-green-l32), (error, $color-red-n0, $color-red-l32) {
+    &.#{$state} {
+      .pt-circle {
+        background-color: #{$color};
+        border-color: #{$color};
+      }
+
+      &.active{
+        .pt-circle {
+          border-color: #{$color};
+          background-color: transparent;
+
+          &:before {
+            background-color: #{$color};
+          }
+        }
+      }
+
+      &.disabled,
+      &:disabled {
+        .pt-circle {
+          border-color: #{$disabled};
+          background-color: #{$disabled};
+
+          &:before {
+            background-color: #{$disabled};
+          }
+        }
+      }
+    }
+  }
+
+  &.done {
+    &:before {
+      background-color: $color-green-n0;
+    }
+  }
+
+  &.not-started {
+    .pt-circle:hover {
+      cursor: default;
+
+      ~ .pt-text {
+        color: $color-grey-l16;
+      }
+    }
+
+    .pt-text:hover {
+      cursor: default;
+      color: $color-grey-l16;
+    }
+  }
+
+  &.sub-pt-item {
+    &:before {
+      display: none;
+    }
+
+    &:last-child {
+      min-width: auto;
+    }
+  }
+}
+
+.pt-text {
+  position: relative;
+  left: -50%;
+
+  margin-left: 2rem;
+
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4545454545;
+  letter-spacing: .5px;
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $color-grey-l16;
+
+  &:hover {
+    color: $color-blue-n0;
+
+    cursor: pointer;
+  }
+}
+
+.pt-circle {
+  box-sizing: border-box;
+  display: block;
+
+  position: relative;
+
+  width: 2rem;
+  height: 2rem;
+  margin-top: .4rem;
+
+  background-color: $color-white;
+  border: 2px solid $color-light-n0;
+  border-radius: 50%;
+
+  &:before {
+    content: '';
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: .8rem;
+    height: .8rem;
+    margin-top: -.4rem;
+    margin-left: -.4rem;
+
+    border-radius: 50%;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    ~ .pt-text {
+      color: $color-blue-n0;
+    }
+  }
+
+  &.sub-pt-circle {
+    border: none;
+    background-color: $color-light-n0;
+
+    width: .8rem;
+    height: .8rem;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+// END PROGRESS TRACKER //
+
+
+
+
+// BEGIN RESPONSIVE //
+
+@media (max-width: 767px) {
+  .pt-text {
+    display: none;
+  }
+}
+
+// END RESPONSIVE //

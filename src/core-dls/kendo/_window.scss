@@ -1,0 +1,372 @@
+// BEGIN WINDOW //
+
+.k-window , .k-dialog-wrapper{
+  position: fixed;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 3000;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 100% !important;
+  height: 100vh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  $modal-sizes: (sm, 4), (md, 6), (lg, 8), (xl, 10);
+  @each $size, $num in $modal-sizes {
+    &.window-#{$size} {
+      .k-window-titlebar,
+      .k-window-content {
+        width: #{$num/.12 + '%'};
+        max-width: #{12*$num + 'rem'};
+      }
+    }
+  }
+
+  &.fit-height,
+  &.window-maximize {
+    overflow: hidden;
+
+    .k-window-content {
+      padding: 0;
+    }
+
+    .window-content-body {
+      padding: 2.4rem;
+
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .window-content-actions {
+      padding: 1.6rem 2.4rem;
+
+      border-top: 1px solid $color-light-l12;
+    }
+
+    &.with-tab {
+      .k-window-titlebar {
+        border-bottom-color: $color-white;
+      }
+
+      .window-content-body {
+        padding: 0;
+      }
+
+      .k-tabstrip .k-content {
+        padding: 2.4rem;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
+    }
+  }
+
+  &.fit-height {
+    .k-window-content {
+      max-height: calc(100vh - 11rem);
+    }
+
+    .window-content-body {
+      max-height: calc(100vh - 17.9rem);
+    }
+    
+    &.with-tab {
+      .k-tabstrip .k-content {
+        max-height: calc(100vh - 22.7rem);
+      }
+    }
+  }
+
+  &.window-maximize {
+    height: 100vh !important;
+    padding: 0 !important;
+
+    .k-window-titlebar,
+    .k-window-content {
+      width: 100%;
+      max-width: 100%;
+
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .k-window-titlebar {
+      min-height: 6.1rem;
+      margin-top: 0 !important;
+
+      border-width: 0 0 1px;
+    }
+
+    .k-window-content {
+      height: calc(100vh - 6rem);
+
+      border-width: 0;
+    }
+
+    .window-content-body {
+      height: calc(100vh - 12.9rem);
+      background-color: $color-light-l20;
+    }
+
+    &.with-tab {
+      .k-tabstrip .k-content {
+        height: calc(100vh - 17.9rem);
+      }
+    }
+  }
+}
+
+.k-ff,
+.k-ie,
+.k-edge {
+  .k-window {
+    &:not(.window-maximize):after {
+      content: "";
+      display: block;
+      
+      width: 1px;
+      min-height: 2.4rem;
+    }
+
+    &.window-maximize,
+    &.fit-height {
+      .window-content-body {
+        &:after {
+          content: "";
+          display: block;
+          
+          width: 1px;
+          min-height: 2.4rem;
+        }
+      }
+    }
+  }
+}
+
+.k-window-titlebar,
+.k-window-content {
+  width: 100%;
+  // min-width: 40rem;
+
+  background-color: $color-white;
+  border: 1px solid $color-light-l12;
+  @include box-shadow-raised();
+
+  @media (max-width: 575px) {
+    min-width: 100%;
+  }
+}
+
+.k-window-titlebar {
+  display: flex;
+  align-items: center;
+
+  min-height: 6.2rem;
+  margin-top: auto !important;
+  padding: 1.6rem 2.4rem;
+
+  @include border-top-radius();
+
+  .k-window-title {
+    flex-grow: 1;
+    
+    overflow: hidden;
+
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-transform: capitalize;
+    text-overflow: ellipsis;
+
+    color: $color-grey-d20;
+  }
+}
+
+.k-window-actions {
+  .k-button {
+    display: block;
+
+    color: $color-grey-l16;
+
+    &:hover {
+      text-decoration: none;
+
+      color: $color-blue-n0;
+    }
+  }
+
+  .k-i-close, .k-i-x{
+    &:before {
+      content: '\e912';
+  
+      display: block;
+  
+      @include icon-moon(2rem);
+    }
+  }
+}
+
+a{
+  text-decoration: none;
+}
+
+.k-window-content {
+  flex-shrink: 0;
+  
+  margin-bottom: auto;
+  padding: 2.4rem;
+
+  border-top-width: 0;
+
+  @include border-bottom-radius();
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.window-content-body {
+  min-height: auto;
+
+  transition: all .3s;
+}
+
+.window-content-body-header {
+  margin: -2.4rem -2.4rem 0;
+  padding: 2.4rem 2.4rem 1.6rem;
+
+  background-color: $color-light-l20;
+}
+
+.window-content-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  padding-top: 3.2rem;
+
+  .btn + .btn,
+  .btn-group + .btn-group {
+    margin-left: 1.6rem;
+  }
+
+  .btn.btn-sm + .btn.btn-sm,
+  .btn + .btn-link,
+  .btn-link + .btn,
+  .btn-link + .btn-link,
+  .btn-icon + .btn-icon
+   {
+    margin-left: .8rem;
+  }
+}
+
+.k-window-opening {
+  overflow: hidden;
+}
+
+// END WINDOW //
+
+#resetPassword .window-content-body {
+  min-height: auto;
+}
+
+
+// BEGIN RESPONSIVE //
+
+@media (max-width: 1023px) {
+  .k-window {
+    &.window-lg,
+    &.window-xl {
+      .k-window-titlebar,
+      .k-window-content {
+        width: calc(100% - 4.8rem);
+        max-width: calc(100% - 4.8rem);
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .k-window {
+
+    &.window-md,
+    &.window-lg,
+    &.window-xl {
+      .k-window-titlebar,
+      .k-window-content {
+        width: calc(100% - 4.8rem);
+        max-width: calc(100% - 4.8rem);
+      }
+    }
+
+    &.fit-height,
+    &.window-maximize {
+      .window-content-body {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+
+      .window-content-actions {
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+      }
+    }
+  }
+
+  .k-window-titlebar {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .k-window-content {
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+  }
+
+  .window-content-body-header {
+    margin: -1.6rem -1.6rem 0;
+    padding: 1.6rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .k-window {
+    &.window-sm,
+    &.window-md,
+    &.window-lg,
+    &.window-xl {
+      .k-window-titlebar,
+      .k-window-content {
+        width: calc(100% - 4.8rem);
+        max-width: calc(100% - 4.8rem);
+      }
+    }
+  }
+}
+
+// END RESPONSIVE //
+
+
+
+
+// BEGIN OVERLAY //
+
+.k-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2999;
+  
+  background-color: $color-black;
+
+  opacity: .4 !important;
+}
+
+// END OVERLAY //

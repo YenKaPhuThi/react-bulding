@@ -1,0 +1,166 @@
+// BEGIN POPOVER //
+
+.popover {
+  //position: absolute;
+  z-index: 2001;
+
+  min-width: 27.6rem;
+
+  color: $color-grey-d20;
+  background-color: $color-white;
+  
+  @include border-default($color-light-l12);
+  @include box-shadow-sticky();
+  &.popover-on-window {
+    z-index: 9000;
+  }
+  .arrow,
+  .popover-header,
+  .popover-body {
+    background-color: $color-white;
+  }
+
+  .popover-header {
+    position: relative;
+
+    padding: 1.6rem 1.6rem 0;
+
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.4;
+    
+    color: $color-grey-d20;
+
+    @include border-top-radius($border-radius-md);
+
+    + .popover-body {
+      padding-top: 0;
+    }
+  }
+
+  .arrow {
+    display: block;
+
+    position: absolute;
+
+    height: 1.6rem;
+    width: 1.6rem;
+
+    @include border-default($color-light-l12, 1px, 2px);
+    @include box-shadow-raised();
+
+    transform: rotate(-45deg);
+  }
+
+  .popover-body {
+    position: relative;
+    
+    height: 100%;
+    padding: 1.6rem 1.6rem 1.6rem;
+
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+
+    background-color: $color-white;
+
+    border-radius: $border-radius-md;
+
+    .popover-body-sm {
+      width: 24.4rem;
+      max-width: 24.4rem;
+    }
+
+    .popover-body-md {
+      width: 34.4rem;
+      max-width: 34.4rem;
+    }
+
+    .popover-body-lg {
+      width: 44.4rem;
+      max-width: 44.4rem;
+    }
+
+    .popover-body-xl {
+      width: 54.4rem;
+      max-width: 54.4rem;
+    }
+  }
+
+  &.size-sm {
+    width: 27.6rem;
+    max-width: 27.6rem;
+  }
+
+  &.size-md {
+    width: 37.6rem;
+    max-width: 37.6rem;
+  }
+
+  &.size-lg {
+    width: 47.6rem;
+    max-width: 47.6rem;
+  }
+
+  &.size-xl {
+    width: 57.6rem;
+    max-width: 57.6rem;
+  }
+
+  @each $direction, $opp, $offset in (top, bottom, left),(top-start, bottom, left), (top-end, bottom, left), (bottom, top, left), (bottom-start, top, left), (bottom-end, top, left), (left, right, top), (left-start, right, top), (left-end, right, top), (right, left, top), (right-start, left, top), (right-end, left, top) {
+      margin-#{$opp}: 1.2rem;
+      .arrow {
+        #{$opp}: -.6rem;
+        #{$offset}: calc(50% - 1.2rem);
+      }
+  }
+
+  .arrow {
+    top: 1.2rem !important;
+    right: -0.6rem;
+  }
+
+}
+
+.popover-tabular-content,
+.popover-tabular-content-vertical {
+  td {
+    vertical-align: top;
+  }
+
+  tr:not(:first-child) {
+    td {
+      padding-top: .8rem;
+    }
+  }
+}
+
+.popover-tabular-content {
+  td {
+    &:first-child {
+      padding-right: 1.6rem;
+
+      font-weight: 500;
+      white-space: nowrap;
+    }
+  }
+}
+
+.popover-tabular-content-vertical {
+  td {
+    font-size: 1.4rem;
+    line-height: 1.4285714286;
+  }
+}
+
+@media (max-width: 332px) {
+  .popover {
+    &.size-sm {
+      &--smallest {
+        min-width: 26.6rem;
+        width: 26.6rem;
+      }
+    }
+  }
+}
+
+// END POPOVER //
